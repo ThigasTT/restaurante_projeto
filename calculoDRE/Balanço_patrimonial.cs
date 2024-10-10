@@ -21,6 +21,18 @@ namespace calculoDRE
 
         public double Emprestimos { get; set; }
 
+
+        public void cadastroInf()
+        {
+            Console.WriteLine("Qual o valor do Capital social?");
+                this.Capital_social = double.Parse(Console.ReadLine());
+            Console.WriteLine("Qual o valor do Caixa?");
+            this.Caixa = double.Parse(Console.ReadLine());
+            Console.WriteLine("Qual o valor das compras a prazo?");
+            this.Fornecedores = double.Parse(Console.ReadLine());
+            Console.WriteLine("Qual o valor dos empréstimos?");
+            this.Emprestimos = double.Parse(Console.ReadLine());
+        }
         public void calculaAtivo(double caixa, double estoque)
         {
              this.Ativo = caixa + estoque; 
