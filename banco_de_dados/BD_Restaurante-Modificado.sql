@@ -33,11 +33,41 @@ CREATE TABLE Produtos (
   Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
   Nome_P VARCHAR(45) NOT NULL,
   Validade DATE NOT NULL,
+  Preço Double NOT NULL,
   Custo DOUBLE NOT NULL,
-  PRIMARY KEY(idProdutos, Estabelecimento_idEstabelecimento),
-  FOREIGN KEY(Estabelecimento_idEstabelecimento)
-    REFERENCES Estabelecimento(idEstabelecimento)
+  PRIMARY KEY(idProdutos, Estabelecimento_idEstabelecimento)
 );
+
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('1', 'Grand Gateau', '79.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('2', 'Pudim', '22.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('3', 'Sundae Ponto A', '49.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('4', 'Petit Gateau', '48.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('5', 'Taça Prestígio', '79.99');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('6', 'Ice Cream', '49.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('7', 'Taça Oreo', '49.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('8', 'Taça Ferrero Roche', '79.99');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('9', 'Merengue Francês', '32.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('10', 'Pastéis', '22.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('11', 'Dadinho de Tapioca', '29.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('12', 'Camarão na taça', '79.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('13', 'Fondue Salgado', '179.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('14', 'Fondue Doce', '149.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('15', 'Balada', '33.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('16', 'Bolinho de Costela', '49.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('17', 'Tartar de Salmão', '39.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('18', 'Pastéis de Salmão', '49.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('19', 'Bruschetta Queijo Brie', '29.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('20', 'Gin Royale', '49.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('21', 'Paloma Dom Julio', '49.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('22', 'Maracujá Premium', '54.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('23', 'Gramble Berry', '35.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('24', 'Bramble Black', '35.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('25', 'Ketel One', '34.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('26', 'Cereja Flor', '33.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('27', 'Gin Maça Verde', '49.90');
+INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('28', 'Maragarita', '42.90');
+
+
 
 CREATE TABLE Recursos_Humanos (
   idRecursos_Humanos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
