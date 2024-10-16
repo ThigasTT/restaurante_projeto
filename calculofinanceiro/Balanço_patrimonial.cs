@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace calculoDRE
 {
-    internal class Balanço_patrimonial
+    internal class Balanço_patrimonial:DRE
     {
         public double Ativo { get; set; }
 
@@ -33,13 +33,13 @@ namespace calculoDRE
             Console.WriteLine("Qual o valor dos empréstimos?");
             this.Emprestimos = double.Parse(Console.ReadLine());
         }
-        public void calculaAtivo(double caixa, double estoque)
+        public void calculaAtivo()
         {
-             this.Ativo = caixa + estoque; 
+             this.Ativo = this.Caixa + this.Estoque; 
         }
-        public void calculaPassivo(double fornecedores, double lucro) 
+        public void calculaPassivo() 
         {
-            this.Passivo = fornecedores + lucro; 
+            this.Passivo = this.Fornecedores + this.Emprestimos;
         }
     }
 }
