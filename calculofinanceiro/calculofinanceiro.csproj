@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Balanço_patrimonial.cs" />
+    <Compile Include="BalancoP.cs" />
     <Compile Include="DRE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

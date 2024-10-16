@@ -7,19 +7,18 @@ using System.Threading.Tasks;
 
 namespace calculoDRE
 {
-    internal class Balanço_patrimonial:DRE
+    public class BalancoP
     {
         public double Ativo { get; set; }
 
         public double Passivo { get; set; }
         public double Capital_social { get; set; }
         public double Caixa {  get; set; }
-        public double Imóvel { get; set; }
-        
+
         public double Estoque { get; set; }
         public double Fornecedores { get; set; }
-
         public double Emprestimos { get; set; }
+        public double Dre { get; set; }
 
 
         public void cadastroInf()
@@ -33,6 +32,11 @@ namespace calculoDRE
             Console.WriteLine("Qual o valor dos empréstimos?");
             this.Emprestimos = double.Parse(Console.ReadLine());
         }
+        public void calculoDre(double receita, double custo)
+        {
+            this.Dre = receita - custo;
+
+        }
         public void calculaAtivo()
         {
              this.Ativo = this.Caixa + this.Estoque; 
@@ -40,6 +44,15 @@ namespace calculoDRE
         public void calculaPassivo() 
         {
             this.Passivo = this.Fornecedores + this.Emprestimos;
+        }
+        public void verifica()
+        {
+            if (this.Ativo - this.Passivo == 0)
+                {
+                Console.WriteLine("O balanço está correto");
+            }else {
+                Console.WriteLine("O balanço está errado");
+            }
         }
     }
 }
