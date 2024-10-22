@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="PT-BR" >
+<head>
+  <meta charset="UTF-8">
+  <title>La Dulce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<section id="menu-lista" class="section-padding">
+  <div class="container">
+  <div class="row">
+<div class=" op1">
+  <h1 class="header-h">La Dulce</h1>
+  <p  class="header-p">(texto)
+            <br>(texto) </p>
+
+    </div>
+    <div class="col-md-12 text-center" id="menu-filtros">
+      <ul>
+        <li><a class="filtros active" data-filter=".menu-restaurante">Ingredientes</a></li>
+         <li><a class="filtros " data-filter=".op2">TEXTO</a></li>
+         <li><a class="filtros" data-filter=".op3">TEXTO</a></li>
+         <li><a class="filtros" data-filter=".op4">texto</a></li>
+      </ul>
+    </div>
+    <div id="menu-wrapper">
+      <div class="menu-restaurante">
+        <span class="clearfix">
+          <a class="menu-titulo" href="#">(nome do produto)</a>
+          <span style="left:166px;right:44px;" class="menu-line"></span>
+          <span class="menu-preco">R$20.99</span>
+        </span>
+        <span class="menu-subtitulo">(subtitulo do produto)</span>
+      </div>
+      
+   </div>
+    </div>
+     </div>
+
+</section>
+
+ <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="header-h">Faça sua Reserva</h1>
+                    <p class="header-p">(subtitulo da reserva)
+                    <br>subtitulo da reserva </p>
+                </div>
+            </div>
+            <div class="row msg-row">
+                <div class="col-md-4 col-sm-4 mr-15">
+                    <div class="media-2">
+                        <div class="media-left">
+                            <div class="contact-phone bg-1 text-center"><span class="phone-in-talk fa fa-phone fa-3x"></span></div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="dark-blue regular">(numeros de telefone)</h4>
+                            <p class="light-blue regular alt-p">1155000000000 - <span class="contacts-sp">(contato)</span></p>
+                        </div>
+                    </div>
+                    <div class="media-2">
+                        <div class="media-left">
+                            <div class="contact-email bg-14 text-center"><span class="hour-icon fa fa-clock-o fa-3x"></span></div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="dark-blue regular">opções de contato</h4>
+                            <p class="light-blue regular alt-p"> opcões de contato</p>
+                            <p class="light-blue regular alt-p">
+                               00:00 - 00.00
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="col-md-8 col-sm-8">
+                    <form action="" method="post" role="form" class="contactForm">
+                    <div id="sendmessage">Sua solicitação de reserva foi aceita, Obrigado!</div>
+                    <div id="errormessage"></div>
+                    <div class="col-md-6 col-sm-6 contact-form pad-form">
+                        <div class="form-group label-floating is-empty">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" data-rule="minlen:4" data-msg="Please enter at least 4 characters" />
+                            <div class="validation"></div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6 col-sm-6 contact-form">
+                        <div class="form-group">
+                            <input type="date" class="form-control label-floating is-empty" name="date" id="date" placeholder="Data" data-rule="required" data-msg="This field is required" />
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 contact-form pad-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control label-floating is-empty" name="email" id="email" placeholder="Seu Email" data-rule="email" data-msg="Please enter a valid email" />
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 contact-form">
+                        <div class="form-group">
+                            <input type="time" class="form-control label-floating is-empty" name="time" id="time" placeholder="Hora" data-rule="required" data-msg="This field is required" />
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control label-floating is-empty" name="phone" id="phone" placeholder="Telefone" data-rule="required" data-msg="This field is required" />
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control label-floating is-empty" name="people" id="people" placeholder="Quantas Pessoas" data-rule="required" data-msg="This field is required" />
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 contact-form">
+                        <div class="form-group label-floating is-empty">
+                            <textarea class="form-control" name="message" rows="5" rows="3" data-rule="required" data-msg="Please write something for us" placeholder="Menssagem"></textarea>
+                            <div class="validation"></div>
+                        </div>
+                        </form>
+                    </div>
+
+                    <div class="col-md-12 btnpad">
+                        <div class="contacts-btn-pad">
+                            <button class="contacts-btn">Solicitar reserva</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
