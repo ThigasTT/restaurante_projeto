@@ -31,10 +31,11 @@ namespace FinanceiroLibrary
             Console.WriteLine("Qual o valor dos empréstimos?");
             this.Emprestimos = double.Parse(Console.ReadLine());
         }
-        public void calculoDre(double receita, double custo)
+        public double calculoDre(double receita, double custo)
         {
             this.Dre = receita - custo;
 
+            return this.Dre;
         }
         public void calculaAtivo()
         {
@@ -54,6 +55,12 @@ namespace FinanceiroLibrary
             {
                 Console.WriteLine("O balanço está errado");
             }
+        }
+
+        public double dre() 
+        {
+            
+            return this.Dre; 
         }
     }
 }
