@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace reservasLibrary
 {
-    public class Class1
+    internal class Cliente
     {
+        public string nome {  get; set; }
+        public string telefone { get; set; }
     }
 }

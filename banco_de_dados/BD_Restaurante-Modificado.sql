@@ -14,7 +14,7 @@ CREATE TABLE Estabelecimento (
 CREATE TABLE Pedido (
   idPedido INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
-  Pedido INT NOT NULL,
+  Pedido varchar(45) NOT NULL,
   Compra DOUBLE NOT NULL,
   Nome_cli VARCHAR(45) NOT NULL,
   Telefone_cli VARCHAR(45) NOT NULL,
