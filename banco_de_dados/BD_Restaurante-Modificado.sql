@@ -130,7 +130,6 @@ CREATE TABLE Folha_Pag (
   Atrasos TIME NOT NULL,
   Hora_Extra TIME NOT NULL,
   Jornada_Mês INT NOT NULL,
-  DSR INT NOT NULL,
   PRIMARY KEY(idFolha_Pag, Recursos_Humanos_idRecursos_Humanos, Recursos_Humanos_Estabelecimento_idEstabelecimento),
   FOREIGN KEY(Recursos_Humanos_idRecursos_Humanos, Recursos_Humanos_Estabelecimento_idEstabelecimento)
     REFERENCES Recursos_Humanos(idRecursos_Humanos, Estabelecimento_idEstabelecimento)

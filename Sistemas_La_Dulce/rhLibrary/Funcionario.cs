@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace rhLibrary
 {
-    public class funcionario
+    internal class funcionario
     {
         public string Nome { get; set; }
-        public string Idade { get; set; }
-        public string Cpf { get; set; }
+        public string Cargo { get; set; }
+        public string Tel_C {  get; set; }
+        public string Email { get; set; }
+        public string Data_de_Contratação { get; set; }
     }
 }

@@ -8,9 +8,9 @@ namespace estoqueLibrary
 {
     public class estoque
     {
+        public string Nome_prod {  get; set; }
         public int Qtd_prod { get; set; }
-        //  public double Prc_prod { get; set; }
-
+        //  public double Prc_prod { get; set; 
         public double Saldo { get; set; }
         public double Pr_Unit { get; set; }
         public void atSaldo(int qtd, double preco)

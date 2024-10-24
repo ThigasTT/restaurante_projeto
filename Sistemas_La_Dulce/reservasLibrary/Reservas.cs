@@ -10,7 +10,8 @@ namespace reservasLibrary
     {
         public string Pedido {  get; set; }
         public double Valcompra {  get; set; }
-
+        public string Nome_cli { get; set; }
+        public string Tel_C_cli { get; set; }
         public string Data_reserva {  get; set; }
 
         public string Numero_Pessoas {  get; set; }
