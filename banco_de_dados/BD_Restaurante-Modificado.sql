@@ -82,6 +82,14 @@ CREATE TABLE Recursos_Humanos (
     REFERENCES Estabelecimento(idEstabelecimento)
 );
 
+INSERT INTO `restaurante`.`Recursos_Humanos` (`idRecursos_Humanos`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratação`) VALUES ('1', 'Rafael Santos', 'Garçom','(11)98754-4321','rafael.santos@restaurante.com','11/2/2022');
+INSERT INTO `restaurante`.`Recursos_Humanos` (`idRecursos_Humanos`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratação`) VALUES ('2', 'Carlos Oliveira', 'Cozinheiro','(11)97654-3218','carlos.oliveira@restaurante.com','1/6/2022');
+INSERT INTO `restaurante`.`Recursos_Humanos` (`idRecursos_Humanos`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratação`) VALUES ('3', 'Clara Silva', 'Gerente','(11)96543-3217','rafael.santos@restaurante.com','2/5/2023');
+INSERT INTO `restaurante`.`Recursos_Humanos` (`idRecursos_Humanos`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratação`) VALUES ('4', 'Maria Pereira', 'Recepcionista','(11)95432-1678','maria.pereira@restaurante.com','10/12/2023');
+
+
+
+
 CREATE TABLE Fornecedores (
   idFornecedores INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
