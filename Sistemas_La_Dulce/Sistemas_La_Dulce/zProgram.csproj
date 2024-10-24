@@ -49,5 +49,27 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\estoqueLibrary\estoqueLibrary.csproj">
+      <Project>{6bcb737a-b8b0-4326-9013-21c868985a8c}</Project>
+      <Name>estoqueLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FinanceiroLibrary\FinanceiroLibrary.csproj">
+      <Project>{66af3f41-e5b3-4f8d-8386-dd1a7bb0e3a1}</Project>
+      <Name>FinanceiroLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\fornecedoresLibrary\fornecedoresLibrary.csproj">
+      <Project>{f9b05f31-0628-4774-9f2b-0ef38ca7207e}</Project>
+      <Name>fornecedoresLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\reservasLibrary\reservasLibrary.csproj">
+      <Project>{68ed2578-7762-44bb-a532-818d56ff82eb}</Project>
+      <Name>reservasLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rhLibrary\rhLibrary.csproj">
+      <Project>{d2b0fe80-6981-4d2b-af63-6e33743152d5}</Project>
+      <Name>rhLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
