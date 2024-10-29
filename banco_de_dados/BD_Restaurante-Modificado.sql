@@ -10,6 +10,8 @@ CREATE TABLE Estabelecimento (
   CNPJ INT NOT NULL,
   PRIMARY KEY(idEstabelecimento)
 );
+INSERT INTO `restaurante`.`Estabelecimento` (`idEstabelecimento`, `CEP`, `Tel_C`, `Propriétario`, `CNPJ`) VALUES ('1', '21213232221', '117950584', 'Amandha', '00623904000173');
+
 
 CREATE TABLE Pedido (
   idPedido INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
