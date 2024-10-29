@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace rhLibrary
 {
-    internal class funcionario
+    internal class Funcionario
     {
         public string Nome { get; set; }
         public string Cargo { get; set; }

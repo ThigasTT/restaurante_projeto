@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinanceiroLibrary
 {
-    public class balanco_patrimonial
+    public class Balanco_patrimonial
     {
         public double Ativo { get; set; }
 

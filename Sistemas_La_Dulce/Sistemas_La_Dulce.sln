@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35327.3
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35325.158
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zProgram", "Sistemas_La_Dulce\zProgram.csproj", "{E4AFEA59-9729-47C0-BF45-E87DF4738C20}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reservasLibrary", "reservasLibrary\reservasLibrary.csproj", "{68ED2578-7762-44BB-A532-818D56FF82EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rhLibrary", "rhLibrary\rhLibrary.csproj", "{D2B0FE80-6981-4D2B-AF63-6E33743152D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnLibrary", "ConnLibrary\ConnLibrary.csproj", "{6CC00E19-11AE-461B-94C7-10865AD310F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D2B0FE80-6981-4D2B-AF63-6E33743152D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2B0FE80-6981-4D2B-AF63-6E33743152D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2B0FE80-6981-4D2B-AF63-6E33743152D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC00E19-11AE-461B-94C7-10865AD310F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC00E19-11AE-461B-94C7-10865AD310F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC00E19-11AE-461B-94C7-10865AD310F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC00E19-11AE-461B-94C7-10865AD310F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
