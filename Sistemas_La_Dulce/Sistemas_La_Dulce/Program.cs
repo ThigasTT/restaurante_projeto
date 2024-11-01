@@ -52,8 +52,8 @@ namespace Sistemas_La_Dulce
             switch (op)
             {
                 case "1":
-                   
-                    Estoque e = new Estoque("Caneta",21,2313,123);
+                    Console.WriteLine("Qual o nome do produto?");
+                    Estoque e = new Estoque(Console.ReadLine());
                     Console.Clear();
                     e.menuestoque();
                     break;

@@ -8,7 +8,7 @@ namespace estoqueLibrary
 {
     public class Estoque
     {
-        public Estoque(string nome_prod, int qtd_prod, double saldo, double c_prod )
+        public Estoque(string nome_prod)
         {
             this.Nome_prod = nome_prod;
         }
@@ -47,8 +47,8 @@ namespace estoqueLibrary
                     atSaldo(int.Parse(Console.ReadLine()),double.Parse(Console.ReadLine())); ;
                     break;
                 case "3":
-                    Console.WriteLine("Digite a quantidade de itens que saíram e em seguida o custo unitário\n");
-                    redSaldo(int.Parse(Console.ReadLine()), double.Parse(Console.ReadLine()));
+                    Console.WriteLine("Digite a quantidade de itens que sairão\n");
+                    redSaldo(int.Parse(Console.ReadLine()));
                     break;
                 case "q":
                     Console.Clear();
@@ -70,9 +70,9 @@ namespace estoqueLibrary
             this.Qtd_prod =this.Qtd_prod + qtd;
             this.c_prod = this.Saldo / this.Qtd_prod;
         }
-        public void redSaldo(int qtd,double preco)
+        public void redSaldo(int qtd)
         {
-            this.Saldo = this.Saldo - qtd * preco;
+            this.Saldo = this.Saldo - qtd * this.c_prod;
             this.Qtd_prod =this.Qtd_prod - qtd;
             this.c_prod = this.Saldo / this.Qtd_prod;
         }
