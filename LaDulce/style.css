@@ -2,7 +2,7 @@
         font-size: 35px;
    color: #FFB03B;
     font-size: 46px;
-    font-family: 'Satisfy', sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 300;
     }
 ul
@@ -14,7 +14,11 @@ ul
   font-size:16px;
 }
 .section-padding{
-    padding: 60px 0px;
+
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 }
 .op1{
   margin-bottom:35px;
@@ -130,7 +134,6 @@ ul
 #sendmessage.show, #errormessage.show, .show {
     display:block;
 }
-
 body{
   background-image: url(https://blog.arboimoveis.com.br/wp-content/uploads/2020/09/melhores-restaurantes-de-sp.jpg);
   background-repeat: no-repeat;
@@ -141,3 +144,4 @@ body{
   margin: 0%;
   padding: 0%;
 }
+
