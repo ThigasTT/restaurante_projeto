@@ -130,3 +130,14 @@ ul
 #sendmessage.show, #errormessage.show, .show {
     display:block;
 }
+
+body{
+  background-image: url(https://blog.arboimoveis.com.br/wp-content/uploads/2020/09/melhores-restaurantes-de-sp.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0%;
+  padding: 0%;
+}
