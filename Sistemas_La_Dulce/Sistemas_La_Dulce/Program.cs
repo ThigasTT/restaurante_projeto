@@ -10,6 +10,7 @@ using FinanceiroLibrary;
 using fornecedoresLibrary;
 using reservasLibrary;
 using rhLibrary;
+using MenuPrincipalLibrary;
 
 
 
@@ -39,7 +40,7 @@ namespace Sistemas_La_Dulce
             string sql = "";
             cmd = new MySqlCommand(sql, conexao);*/
             
-            string op;
+            /*string op;
             Console.WriteLine("RESTAURANTE LA DULCE\n\n");
             Console.WriteLine("Onde você deseja ir?\n");
             Console.WriteLine("Estoque-1\n");
@@ -48,8 +49,9 @@ namespace Sistemas_La_Dulce
             Console.WriteLine("Reservas-4\n");
             Console.WriteLine("Recursos Humanos-5\n");
             Console.WriteLine("Sair-q");
-            op =Console.ReadLine();
-            switch (op)
+            op =Console.ReadLine();*/
+            Menu m = new Menu();
+            switch (m.painel())
             {
                 case "1":
                     Console.WriteLine("Qual o nome do produto?");

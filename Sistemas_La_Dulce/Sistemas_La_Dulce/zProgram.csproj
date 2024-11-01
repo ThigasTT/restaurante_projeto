@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MenuPrincipalLibrary">
+      <HintPath>..\MenuPrincipalLibrary\bin\Debug\MenuPrincipalLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\..\v4.8\MySql.Data.dll</HintPath>
     </Reference>
