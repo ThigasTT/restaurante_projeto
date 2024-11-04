@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MenuPrincipalLibrary">
-      <HintPath>..\MenuPrincipalLibrary\bin\Debug\MenuPrincipalLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\..\v4.8\MySql.Data.dll</HintPath>
     </Reference>
@@ -56,17 +53,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\estoqueLibrary\estoqueLibrary.csproj">
-      <Project>{6bcb737a-b8b0-4326-9013-21c868985a8c}</Project>
-      <Name>estoqueLibrary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FinanceiroLibrary\FinanceiroLibrary.csproj">
       <Project>{66af3f41-e5b3-4f8d-8386-dd1a7bb0e3a1}</Project>
       <Name>FinanceiroLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\fornecedoresLibrary\fornecedoresLibrary.csproj">
-      <Project>{f9b05f31-0628-4774-9f2b-0ef38ca7207e}</Project>
-      <Name>fornecedoresLibrary</Name>
+    <ProjectReference Include="..\MenuPrincipalLibrary\MenuPrincipalLibrary.csproj">
+      <Project>{aa1d494d-84e2-4c2b-adda-f349ca0cd531}</Project>
+      <Name>MenuPrincipalLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\reservasLibrary\reservasLibrary.csproj">
       <Project>{68ed2578-7762-44bb-a532-818d56ff82eb}</Project>
