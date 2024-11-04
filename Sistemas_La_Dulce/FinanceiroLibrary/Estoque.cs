@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FinanceiroLibrary;
 
 namespace estoqueLibrary
 {
-    public class Estoque
+    public class Estoque:Balanco_patrimonial
     {
         public Estoque(string nome_prod)
         {
@@ -34,7 +35,7 @@ namespace estoqueLibrary
             execução(op);
         }
 
-
+        
         public void execução(string opção)
         {
             switch (opção)

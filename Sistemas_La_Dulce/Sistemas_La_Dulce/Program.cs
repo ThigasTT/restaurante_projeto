@@ -51,6 +51,7 @@ namespace Sistemas_La_Dulce
             Console.WriteLine("Sair-q");
             op =Console.ReadLine();*/
             Menu m = new Menu();
+           
             switch (m.painel())
             {
                 case "1":
@@ -61,6 +62,11 @@ namespace Sistemas_La_Dulce
                     break;
                 case "2":
                     Console.Clear();
+                    Balanco_patrimonial b = new Balanco_patrimonial();
+                    if (b.exe == false)
+                    {
+                        
+                    }
                     break;
                 case "3":
                     Console.Clear();

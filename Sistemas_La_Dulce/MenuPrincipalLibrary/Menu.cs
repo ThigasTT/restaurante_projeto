@@ -23,8 +23,39 @@ namespace MenuPrincipalLibrary
 
             return op;
         }
-        /*public string opcoes(string op)
+        /*public void opcoes()
         {
+            
+                switch (painel())
+                {
+                    case "1":
+                        Console.WriteLine("Qual o nome do produto?");
+                     //   Estoque e = new Estoque(Console.ReadLine());
+                        Console.Clear();
+                        e.menuestoque();
+                        break;
+                    case "2":
+                        Console.Clear();
+                       // Balanco_patrimonial b = new Balanco_patrimonial();
+                       // if (//b.exe == false)
+                        {
+
+                        }
+                        break;
+                    case "3":
+                        Console.Clear();
+                        break;
+                    case "4":
+                        Console.Clear();
+                        break;
+                    case "5":
+                        Console.Clear();
+                        break;
+                    case "q":
+                        Console.WriteLine("Encerrando");
+                        break;
+                }
+            
 
         }*/
     }
