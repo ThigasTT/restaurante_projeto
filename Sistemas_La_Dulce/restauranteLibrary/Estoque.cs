@@ -52,6 +52,8 @@ namespace restauranteLibrary
                     break;
                 case "q":
                     Console.Clear();
+                    Menu m = new Menu();
+                    m.opcoes();
                     break;
             }
             menuestoque();

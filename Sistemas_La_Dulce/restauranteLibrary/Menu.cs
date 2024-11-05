@@ -8,6 +8,7 @@ namespace restauranteLibrary
 {
     public class Menu
     {
+
         public string painel()
         {
             string op;
@@ -23,24 +24,22 @@ namespace restauranteLibrary
 
             return op;
         }
-        /*public void opcoes()
-        {
+        public void opcoes()
+        {   
+             string  op=painel();
             
-                switch (painel())
+                switch (op)
                 {
                     case "1":
                         Console.WriteLine("Qual o nome do produto?");
-                     //   Estoque e = new Estoque(Console.ReadLine());
+                        Estoque e = new Estoque(Console.ReadLine());
                         Console.Clear();
                         e.menuestoque();
                         break;
                     case "2":
                         Console.Clear();
-                       // Balanco_patrimonial b = new Balanco_patrimonial();
-                       // if (//b.exe == false)
-                        {
-
-                        }
+                        Balanco_patrimonial b = new Balanco_patrimonial();
+                        
                         break;
                     case "3":
                         Console.Clear();
@@ -57,6 +56,6 @@ namespace restauranteLibrary
                 }
             
 
-        }*/
+        }
     }
 }

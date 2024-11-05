@@ -41,37 +41,8 @@ namespace Sistemas_La_Dulce
             Console.WriteLine("Sair-q");
             op =Console.ReadLine();*/
              Menu m= new Menu();
-           
-            switch (m.painel())
-            {
-                case "1":
-                    Console.WriteLine("Qual o nome do produto?");
-                    Estoque e = new Estoque(Console.ReadLine());
-                    Console.Clear();
-                    e.menuestoque();
-                    break;
-                case "2":
-                    Console.Clear();
-                    Balanco_patrimonial b = new Balanco_patrimonial();
-                    if (b.exe == false)
-                    {
-                        
-                    }
-                    break;
-                case "3":
-                    Console.Clear();
-                    break;
-                case "4":
-                    Console.Clear();
-                    break;
-                case "5":
-                    Console.Clear();
-                    break;
-                case "q":
-                    Console.WriteLine("Encerrando");
-                    break;
-            }
-           
+              m.opcoes();
+
             Console.ReadKey();
         }
     }

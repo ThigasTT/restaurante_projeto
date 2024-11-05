@@ -70,12 +70,45 @@ namespace restauranteLibrary
             Console.WriteLine("Capital social:" + Capital_social);
         }
 
-        public void atualizar()
+        public void atualizar(string op=null)
         {
-            calculoDre();
-            calculaAtivo();
-            calculaPassivo();
-            menuFinanceiro();
+
+            Console.WriteLine("Deseja atualizar tudo? s/n");
+            if (op == "s")
+            {
+
+                calculoDre();
+                calculaAtivo();
+                calculaPassivo();
+                menuFinanceiro();
+            }
+            else
+            {
+                op=atUmaUnidade();
+                switch (op)
+                {
+                    case "1":
+                        calculoDre();
+                        break;
+                    case "2":
+                        calculaAtivo();
+                        break;
+                    case "3":
+                        calculaPassivo();
+                        break;
+                    
+                }
+                            
+            }
+        }
+            public string atUmaUnidade()
+        {
+            Console.WriteLine("O que deseja atualizar?");
+            Console.WriteLine("1-apuração do dre");
+            Console.WriteLine("2-Saldo do estoque e caixa");
+            Console.WriteLine("3-Compras a prazo e estoque");
+            string op = Console.ReadLine();
+            return op;
         }
         public void calculoDre()
         {
@@ -114,7 +147,15 @@ namespace restauranteLibrary
                 Console.WriteLine("O balanço está errado");
             }
         }
-
+        void voltarMenu()
+        {
+            Console.WriteLine("Voltar ao menu s/n");
+            string op = Console.ReadLine();
+            if (op=="s")
+            {
+                menuFinanceiro();
+            }
+        }
         void opcoes(string op)
         {
             switch (op)
@@ -128,21 +169,8 @@ namespace restauranteLibrary
                     verifica();
                     break;
                 case "q":
-
                     break;
             }
-            Console.Clear();
-            Console.WriteLine("voltar para o menu? s/n");
-            string o = Console.ReadLine();
-
-            if (o == "s")
-            {
-                Console.Clear();
-                menuFinanceiro();
-            }
-            else { exe = false; }
-
-            menuFinanceiro();
         }
     }
 
