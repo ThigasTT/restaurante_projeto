@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinanceiroLibrary
+namespace restauranteLibrary
 {
     public class Balanco_patrimonial
     {
@@ -47,7 +47,8 @@ namespace FinanceiroLibrary
             this.Emprestimos = double.Parse(Console.ReadLine());
         }
         public void menuFinanceiro()
-        { string op;
+        {
+            string op;
             Console.WriteLine("Contabilidade do restaurante La Dulce\n\n");
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("Consultar o balanço-1");
@@ -58,11 +59,11 @@ namespace FinanceiroLibrary
         }
         public void consultar()
         {
-           
+
             Console.WriteLine("Ativo:" + Ativo);
             Console.WriteLine("Caixa:" + Caixa);
             Console.WriteLine("Estoque:" + Estoque);
-            Console.WriteLine("Passivo:" + Passivo);  
+            Console.WriteLine("Passivo:" + Passivo);
             Console.WriteLine("Compras a prazo:" + Compras_prazo);
             Console.WriteLine("Emprestimos:" + Emprestimos);
             Console.WriteLine("Lucro:" + Dre);
@@ -80,10 +81,10 @@ namespace FinanceiroLibrary
         {
             double receita, custo;
             Console.WriteLine("Qual foi sua receita no ulimo período?");
-            receita=double.Parse(Console.ReadLine());
+            receita = double.Parse(Console.ReadLine());
             Console.WriteLine("Qual foi seu custo total no último período?");
             custo = double.Parse(Console.ReadLine());
-          
+
             this.Dre = receita - custo;
         }
         public void calculaAtivo()
@@ -114,7 +115,7 @@ namespace FinanceiroLibrary
             }
         }
 
-       void opcoes(string op)
+        void opcoes(string op)
         {
             switch (op)
             {
@@ -139,8 +140,8 @@ namespace FinanceiroLibrary
                 Console.Clear();
                 menuFinanceiro();
             }
-            else { exe=false; }
-            
+            else { exe = false; }
+
             menuFinanceiro();
         }
     }

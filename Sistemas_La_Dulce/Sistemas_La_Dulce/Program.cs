@@ -3,22 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using MySql.Data;
-using estoqueLibrary;
-using FinanceiroLibrary;
-using fornecedoresLibrary;
-using reservasLibrary;
-using rhLibrary;
-using MenuPrincipalLibrary;
-
-
-
+using restauranteLibrary;
 namespace Sistemas_La_Dulce
 {
     internal class Program
     {
-        static void Main(string[] args)
+       static void Main(string[] args)
         {
            /* MySqlCommand cmd;
             MySqlConnection conexao;
@@ -50,7 +40,7 @@ namespace Sistemas_La_Dulce
             Console.WriteLine("Recursos Humanos-5\n");
             Console.WriteLine("Sair-q");
             op =Console.ReadLine();*/
-            Menu m = new Menu();
+             Menu m= new Menu();
            
             switch (m.painel())
             {

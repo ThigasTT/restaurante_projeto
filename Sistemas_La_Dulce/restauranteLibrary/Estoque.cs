@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FinanceiroLibrary;
 
-namespace estoqueLibrary
+namespace restauranteLibrary
 {
-    public class Estoque:Balanco_patrimonial
+    public class Estoque
     {
         public Estoque(string nome_prod)
         {
@@ -35,7 +34,7 @@ namespace estoqueLibrary
             execução(op);
         }
 
-        
+
         public void execução(string opção)
         {
             switch (opção)
@@ -45,7 +44,7 @@ namespace estoqueLibrary
                     break;
                 case "2":
                     Console.WriteLine("Digite a quantidade de itens que entraram e em seguida o custo unitário\n");
-                    atSaldo(int.Parse(Console.ReadLine()), double.Parse(Console.ReadLine())); ;
+                    atSaldo(int.Parse(Console.ReadLine()), double.Parse(Console.ReadLine()));
                     break;
                 case "3":
                     Console.WriteLine("Digite a quantidade de itens que sairão\n");

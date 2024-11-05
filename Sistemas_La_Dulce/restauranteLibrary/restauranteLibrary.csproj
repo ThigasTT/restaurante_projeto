@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68ED2578-7762-44BB-A532-818D56FF82EB}</ProjectGuid>
+    <ProjectGuid>{2582BD77-050E-42BE-8124-E0725816F128}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>reservasLibrary</RootNamespace>
-    <AssemblyName>reservasLibrary</AssemblyName>
+    <RootNamespace>restauranteLibrary</RootNamespace>
+    <AssemblyName>restauranteLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,7 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Reservas.cs" />
+    <Compile Include="Balanco_patrimonial.cs" />
+    <Compile Include="Conexao.cs" />
+    <Compile Include="Estoque.cs" />
+    <Compile Include="Fornecedor.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Folha_pag.cs" />
+    <Compile Include="Reserva.cs" />
+    <Compile Include="Funcionario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
