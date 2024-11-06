@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using restauranteLibrary;
 namespace Sistemas_La_Dulce
@@ -51,8 +52,8 @@ namespace Sistemas_La_Dulce
                 switch (m.painel())
                 {
                     case "1":
-                        e.menuestoque();
                         Console.Clear();
+                        e.menuestoque();
                         break;
                     case "2":
                         Console.Clear();
@@ -60,6 +61,7 @@ namespace Sistemas_La_Dulce
                         break;
                     case "3":
                         Console.Clear();
+                        f.MenuForn();
                         break;
                     case "4":
                         Console.Clear();
@@ -70,7 +72,7 @@ namespace Sistemas_La_Dulce
                     case "q":
                         rodando = false;
                         Console.WriteLine("Encerrando");
-                        Console.ReadKey();
+                        Thread.Sleep(500);
                         break;
                 }
             }

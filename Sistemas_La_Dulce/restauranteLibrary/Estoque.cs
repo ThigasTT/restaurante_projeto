@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,12 @@ namespace restauranteLibrary
             Saldo = 0;
             c_prod = 0;
         }
+        public Estoque(string nome_prod)        {
+            this.Nome_prod = nome_prod;
+           
+        }
+
+
         public string Nome_prod { get; set; }
         public int Qtd_prod { get; set; }
         //  public double Prc_prod { get; set; 
@@ -57,8 +64,13 @@ namespace restauranteLibrary
                         Console.WriteLine("Digite a quantidade de itens que sairão\n");
                         redSaldo(int.Parse(Console.ReadLine()));
                         break;
+                    case "4":
+                    Console.WriteLine("Qual o nome do produto?");
+                    string nome = Console.ReadLine();
+                    Estoque e = new Estoque(nome);
+                    break;
                     case "q":
-                    
+                    Console.ReadKey();
                     return;
                   
 

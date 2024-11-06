@@ -12,6 +12,7 @@ namespace restauranteLibrary
         public string painel()
         {
             string op;
+            Console.Clear();
             Console.WriteLine("RESTAURANTE LA DULCE\n\n");
             Console.WriteLine("Onde você deseja ir?\n");
             Console.WriteLine("Estoque-1\n");

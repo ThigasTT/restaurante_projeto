@@ -110,6 +110,7 @@ namespace restauranteLibrary
             Console.WriteLine("1-apuração do dre");
             Console.WriteLine("2-Saldo do estoque e caixa");
             Console.WriteLine("3-Compras a prazo e estoque");
+            Console.WriteLine("4-Verificar o balanço");
             string op = Console.ReadLine();
             return op;
         }
@@ -169,6 +170,8 @@ namespace restauranteLibrary
 
                 case "2":
                     atualizar();
+                    break;
+                case "3":
                     verifica();
                     break;
                 case "q":
