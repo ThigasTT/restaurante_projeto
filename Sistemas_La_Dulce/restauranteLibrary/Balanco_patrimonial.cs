@@ -20,7 +20,7 @@ namespace restauranteLibrary
         public double Emprestimos { get; set; }
         public double Dre { get; set; }
         public bool exe = true;
-        public Balanco_patrimonial()
+        public void verificacao()
         {
             string conf;
             Console.WriteLine("Já é cadastrado? s/n");
@@ -68,15 +68,18 @@ namespace restauranteLibrary
             Console.WriteLine("Emprestimos:" + Emprestimos);
             Console.WriteLine("Lucro:" + Dre);
             Console.WriteLine("Capital social:" + Capital_social);
+
+            Console.ReadKey();
         }
 
-        public void atualizar(string op=null)
+        public void atualizar()
         {
+            string op;
 
             Console.WriteLine("Deseja atualizar tudo? s/n");
-            if (op == "s")
-            {
-
+            op = Console.ReadLine();
+            Console.WriteLine(op);
+            if (op == "s") {
                 calculoDre();
                 calculaAtivo();
                 calculaPassivo();

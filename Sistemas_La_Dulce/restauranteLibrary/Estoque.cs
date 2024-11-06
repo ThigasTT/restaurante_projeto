@@ -8,9 +8,12 @@ namespace restauranteLibrary
 {
     public class Estoque
     {
-        public Estoque(string nome_prod)
+        public Estoque()
         {
-            this.Nome_prod = nome_prod;
+            Nome_prod = null;
+            Qtd_prod = 0;
+            Saldo = 0;
+            c_prod = 0;
         }
         public string Nome_prod { get; set; }
         public int Qtd_prod { get; set; }
@@ -23,39 +26,45 @@ namespace restauranteLibrary
 
         public void menuestoque()
         {
+
             string op;
             Console.WriteLine("Estoque\n\n");
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("Consultar estoque-1");
             Console.WriteLine("Relatar entrada-2");
             Console.WriteLine("Relatar saída-3");
-            Console.WriteLine("Voltar-q");
+            Console.WriteLine("Sair-q");
             op = Console.ReadLine();
             execução(op);
+
         }
 
 
-        public void execução(string opção)
-        {
-            switch (opção)
+            public void execução(string opção)
             {
-                case "1":
-                    exibir();
-                    break;
-                case "2":
-                    Console.WriteLine("Digite a quantidade de itens que entraram e em seguida o custo unitário\n");
-                    atSaldo(int.Parse(Console.ReadLine()), double.Parse(Console.ReadLine()));
-                    break;
-                case "3":
-                    Console.WriteLine("Digite a quantidade de itens que sairão\n");
-                    redSaldo(int.Parse(Console.ReadLine()));
-                    break;
-                case "q":
-                    return ;
+                switch (opção)
+                {
+                    case "1":
+                        exibir();
+                        Console.ReadKey();
+                        menuestoque();
+                        break;
+                    case "2":
+                        Console.WriteLine("Digite a quantidade de itens que entraram e em seguida o custo unitário\n");
+                        atSaldo(int.Parse(Console.ReadLine()), double.Parse(Console.ReadLine()));
+                        break;
+                    case "3":
+                        Console.WriteLine("Digite a quantidade de itens que sairão\n");
+                        redSaldo(int.Parse(Console.ReadLine()));
+                        break;
+                    case "q":
                     
+                    return;
+                  
+
+                }
             }
-            menuestoque();
-        }
+       
 
         public void exibir()
         {

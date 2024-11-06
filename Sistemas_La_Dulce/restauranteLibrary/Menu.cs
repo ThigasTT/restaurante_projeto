@@ -32,13 +32,11 @@ namespace restauranteLibrary
                 {
                     case "1":
                         Console.WriteLine("Qual o nome do produto?");
-                        Estoque e = new Estoque(Console.ReadLine());
-                        Console.Clear();
-                        e.menuestoque();
+                      
+                    Console.Clear();
                         break;
                     case "2":
                         Console.Clear();
-                        Balanco_patrimonial b = new Balanco_patrimonial();
                         
                         break;
                     case "3":
@@ -52,7 +50,7 @@ namespace restauranteLibrary
                         break;
                     case "q":
                         Console.WriteLine("Encerrando");
-                        break;
+                    break;
                 }
             
 
