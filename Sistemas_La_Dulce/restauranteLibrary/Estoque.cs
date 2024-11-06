@@ -51,10 +51,8 @@ namespace restauranteLibrary
                     redSaldo(int.Parse(Console.ReadLine()));
                     break;
                 case "q":
-                    Console.Clear();
-                    Menu m = new Menu();
-                    m.opcoes();
-                    break;
+                    return ;
+                    
             }
             menuestoque();
         }
