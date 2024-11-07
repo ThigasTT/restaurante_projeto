@@ -14,8 +14,8 @@ namespace Sistemas_La_Dulce
        static void Main(string[] args)
         {
             Conexao c = new Conexao();
-            MySqlCommand cmd;
-            c.conn();
+            //MySqlCommand cmd;
+         //   c.conn();
             /*MySqlConnection conexao;
             conexao = new MySqlConnection();
             try

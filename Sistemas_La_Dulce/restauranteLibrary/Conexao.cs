@@ -14,13 +14,15 @@ namespace restauranteLibrary
         public string pwd = "";
         public string database = "restaurante";
         public MySqlConnection conexao = new MySqlConnection();
-
-        public object conn()
+        public string sql = "";
+        public MySqlCommand cmd = new MySqlCommand();
+        
+        public void conn()
         {
    
             try
             {
-                string stringconexao = "server=127.0.0.1;uid=root;pwd='';database=restaurante";
+                string stringconexao = "server= 127.0.0.1;uid=root;pwd='';database=restaurante";
                 conexao.ConnectionString = stringconexao;
                 conexao.Open();
                 Console.WriteLine("Conexão estabelecida");
@@ -32,9 +34,15 @@ namespace restauranteLibrary
                 Console.WriteLine("Erro! entre em contato com o administrador");
                 Console.ReadKey();
             }
-            return conexao;
+           
+
         }
 
-       
+        public void comando(string tabela, object conexao)
+        {
+            cmd.CommandText = "insert into "+tabela+"";
+        }
     }
+
+    
 }
