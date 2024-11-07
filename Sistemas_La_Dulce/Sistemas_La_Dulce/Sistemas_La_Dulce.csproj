@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\v4.8\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="restauranteLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\restauranteLibrary\bin\Debug\restauranteLibrary.dll</HintPath>

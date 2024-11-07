@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 using restauranteLibrary;
 namespace Sistemas_La_Dulce
 {
@@ -11,8 +13,10 @@ namespace Sistemas_La_Dulce
     {
        static void Main(string[] args)
         {
-           /* MySqlCommand cmd;
-            MySqlConnection conexao;
+            Conexao c = new Conexao();
+            MySqlCommand cmd;
+            c.conn();
+            /*MySqlConnection conexao;
             conexao = new MySqlConnection();
             try
             {
