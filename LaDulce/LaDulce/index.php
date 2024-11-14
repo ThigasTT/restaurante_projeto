@@ -35,6 +35,7 @@
                 <span class="menu-preco">R$79.90</span>
             </span>
             <span class="menu-subtitulo">Massa de brownie, chocolate meio amargo, calda de diamante negro, morangos picados, sorvete de baunilha, gotas de chocolate branco, sorvete magnum tradicional</span>
+            <img class="IMG" src="https://guiadacozinha.com.br/wp-content/uploads/2019/10/grand-gateau-de-chocolate.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -43,7 +44,8 @@
                 <span style="left:166px;right:44px;" class="menu-line"></span>
                 <span class="menu-preco">R$22.90</span>
             </span>
-            <span class="menu-subtitulo">Ingredientes não listados</span>
+            <span class="menu-subtitulo">Ingredientes não listados</span><br>
+            <img class="IMG" src="https://static.itdg.com.br/images/640-440/d1307a2e17cda187df76b78cfd3ac464/shutterstock-2322251819-1-.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -62,6 +64,7 @@
                 <span class="menu-preco">R$48.90</span>
             </span>
             <span class="menu-subtitulo">Massa brownie 32%, creme branco aveludado de avelã, chantilly, chocolate kitkat</span>
+            <img class="IMG" src="https://static.itdg.com.br/images/640-440/3e09b0badb98941eb18e353b7a3cd8a2/365954-original.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -71,6 +74,7 @@
                 <span class="menu-preco">R$79.95</span>
             </span>
             <span class="menu-subtitulo">Sorvete de creme, chocolate prestígio Nestlé, chantilly, ganache de chocolate ao leite</span>
+            <img class="IMG" src="https://anamariabrogui.com.br/assets/uploads/receitas/fotos/usuario-3209-2d790f002a33e475fc56788659c638ff.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -80,6 +84,7 @@
                 <span class="menu-preco">R$49.90</span>
             </span>
             <span class="menu-subtitulo">Torta com sorvete de creme, ganache de chocolate, farofa de castanhas</span>
+            <img class="IMG" src="https://guiadacozinha.com.br/wp-content/uploads/2019/11/Torta-de-sorvete-com-castanha-.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -89,6 +94,7 @@
                 <span class="menu-preco">R$49.90</span>
             </span>
             <span class="menu-subtitulo">Taça oreo com creme intercalando bolacha oreo, finalizando com morango</span>
+            <img class="IMG" src="https://resize.casapino.com.br/?u=https://cms-bomgourmet.s3.amazonaws.com/bomgourmet/2017/02/201702/bacio-gelato-edit-5-b2312a20.jpg&w=661">
         </div>
         
         <div class="menu-restaurante">
@@ -98,6 +104,7 @@
                 <span class="menu-preco">R$79.95</span>
             </span>
             <span class="menu-subtitulo">Sorvete de creme, bombons Ferrero, ganache, amêndoas</span>
+            <img class="IMG" src="https://media-cdn.tripadvisor.com/media/photo-s/0e/e7/ab/d6/taca-ferrero-rocher.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -107,6 +114,7 @@
                 <span class="menu-preco">R$32.90</span>
             </span>
             <span class="menu-subtitulo">Merengue no estilo franco neve doce, creme de confeiteiro de maracujá, pedaços de morango, suspiro, servido em camadas na taça</span>
+            <img class="IMG" src="https://static.wixstatic.com/media/8024f8_e511787c2b2142da9035eb86da56ad4d~mv2.png/v1/fill/w_568,h_320,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/8024f8_e511787c2b2142da9035eb86da56ad4d~mv2.png">
         </div>
         <div class="menu-restaurante">
             <span class="clearfix">
@@ -115,6 +123,7 @@
                 <span class="menu-preco">R$22.90</span>
             </span>
             <span class="menu-subtitulo">6 Unidades. Pastéis de Carne ou de Queijo</span>
+            <img class="IMG" src="https://imagens.jotaja.com/produtos/7b885c18-db63-406b-ad7a-68a82ae86544.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -123,7 +132,8 @@
                 <span style="left:166px;right:44px;" class="menu-line"></span>
                 <span class="menu-preco">R$29.90</span>
             </span>
-            <span class="menu-subtitulo">Tapioca em cubos</span>
+            <span class="menu-subtitulo">Tapioca em cubos</span><br><br>
+            <img class="IMG" src="https://receitas.wap.ind.br/wp-content/uploads/2024/08/dadinho-de-tapioca-1080x640.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -133,6 +143,7 @@
                 <span class="menu-preco">R$49.90</span>
             </span>
             <span class="menu-subtitulo">Filé mignon, filé de frango, linguiça calabresa, lombo suíno, batata rústica. Molho 4 queijos.</span>
+            <img class="IMG" src="https://static.itdg.com.br/images/360-240/f1382c1ece3c8de63c2c2df429454373/68143-original.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -142,6 +153,7 @@
                 <span class="menu-preco">R$49.90</span>
             </span>
             <span class="menu-subtitulo">Camarão empanado com molho especial do chef</span>
+            <img class="IMG" src="https://frescatto.vtexassets.com/assets/vtex.file-manager-graphql/images/1989f08b-0dc8-4c12-ab5e-3ff55792ec55___f323552478830fd4d743f68d9acddd33.png">
         </div>
         
         <div class="menu-restaurante">
@@ -151,6 +163,7 @@
                 <span class="menu-preco">R$149.90</span>
             </span>
             <span class="menu-subtitulo">Mozzarella, provolone e creme de leite</span>
+            <img class="IMG" src="https://tirolez.com.br/wp-content/uploads/tirolezapi/receita-1063.png">
         </div>
         
         <div class="menu-restaurante">
@@ -160,6 +173,7 @@
                 <span class="menu-preco">R$179.90</span>
             </span>
             <span class="menu-subtitulo">Chocolate meio amargo com morango</span>
+            <img class="IMG" src="https://blogcompracerta.s3.amazonaws.com/2022/07/receita-de-fondue-post2.jpeg">
         </div>
         
         <div class="menu-restaurante">
@@ -177,7 +191,8 @@
                 <span style="left:166px;right:44px;" class="menu-line"></span>
                 <span class="menu-preco">R$29.90</span>
             </span>
-            <span class="menu-subtitulo">Provolone empanado</span>
+            <span class="menu-subtitulo">Provolone empanado</span><br><br>
+            <img class="IMG" src="https://conteudo.imguol.com.br/c/entretenimento/a5/2021/11/26/bolinho-de-costela---botequim-da-teresa-1637929762740_v2_4x3.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -187,6 +202,7 @@
                 <span class="menu-preco">R$49.90</span>
             </span>
             <span class="menu-subtitulo">Salmão em cubos com maionese de pimenta, alcaparras, especiarias e limão siciliano</span>
+            <img class="IMG" src="https://guiadacozinha.com.br/wp-content/uploads/2019/10/tartar-de-salmao.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -195,7 +211,8 @@
                 <span style="left:166px;right:44px;" class="menu-line"></span>
                 <span class="menu-preco">R$29.90</span>
             </span>
-            <span class="menu-subtitulo">4 pastéis de salmão</span>
+            <span class="menu-subtitulo">4 pastéis de salmão</span><br><br>
+            <img class="IMG" src="https://static.ifood-static.com.br/image/upload/t_high/pratos/8a215f78-bf7b-4c88-8737-09cc6e12f54a/202306221937_657T_i.jpg">
         </div>
         
         <div class="menu-restaurante">
@@ -205,6 +222,7 @@
                 <span class="menu-preco">R$29.90</span>
             </span>
             <span class="menu-subtitulo">Pão italiano cortado em fatias, com recheio de queijo brie, tomates confit e especiarias</span>
+            <img clas="IMG" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdB2rV55rhVXpa5JdT5D5yMAPX0jn0GaxTgw&s">
         </div>
     </div>
    
