@@ -13,18 +13,17 @@ namespace Sistemas_La_Dulce
     {
        static void Main(string[] args)
         {
-            Conexao c = new Conexao();
-            //MySqlCommand cmd;
-         //   c.conn();
-            /*MySqlConnection conexao;
+
+            string stringconexao = "server=127.0.0.1;uid=root;pwd='';database=restaurante";
+            MySqlConnection conexao;
             conexao = new MySqlConnection();
             try
             {
-                string stringconexao = "server=127.0.0.1;uid=root;pwd='';database=restaurante";
+
                 conexao.ConnectionString = stringconexao;
                 conexao.Open();
                 Console.WriteLine("Conexão estabelecida");
-                Console.ReadKey();
+                Thread.Sleep(1000);
             }
             catch (Exception ex)
             {
@@ -32,10 +31,8 @@ namespace Sistemas_La_Dulce
                 Console.WriteLine("Erro! entre em contato com o administrador");
                 Console.ReadKey();
             }
-            string sql = "";
-            cmd = new MySqlCommand(sql, conexao);*/
-            
-            /*string op;
+
+            string op;
             Console.WriteLine("RESTAURANTE LA DULCE\n\n");
             Console.WriteLine("Onde você deseja ir?\n");
             Console.WriteLine("Estoque-1\n");
@@ -44,10 +41,10 @@ namespace Sistemas_La_Dulce
             Console.WriteLine("Reservas-4\n");
             Console.WriteLine("Recursos Humanos-5\n");
             Console.WriteLine("Sair-q");
-            op =Console.ReadLine();*/
+            op =Console.ReadLine();
              Menu m= new Menu();
             Balanco_patrimonial b = new Balanco_patrimonial();
-            Estoque e = new Estoque();
+            Estoque e = new Estoque(stringconexao);
             Fornecedores f = new Fornecedores();
             bool rodando = true;
 
