@@ -55,6 +55,14 @@ ul
   position:relative;
   display:block;
 }
+
+.IMG{
+  width: 55%;
+  height: 55%;
+}
+
+
+
 #menu-filtros ul li a.active, #menu-filtros ul li a:hover
 {
   background: #FFB03B;
