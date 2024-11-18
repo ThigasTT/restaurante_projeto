@@ -44,7 +44,7 @@
                 <span style="left:166px;right:44px;" class="menu-line"></span>
                 <span class="menu-preco">R$22.90</span>
             </span>
-            <span class="menu-subtitulo">Ingredientes não listados</span><br>
+            <span class="menu-subtitulo">Ingredientes não listados</span><br><br>
             <img class="IMG" src="https://static.itdg.com.br/images/640-440/d1307a2e17cda187df76b78cfd3ac464/shutterstock-2322251819-1-.jpg">
         </div>
         
@@ -337,7 +337,7 @@
                 <div class="col-md-4 col-sm-4 mr-15">
                     <div class="media-2">
                         <div class="media-left">
-                            <div class="contact-phone bg-1 text-center"><span class="phone-in-talk fa fa-phone fa-3x"></span></div>
+                            <div class="contact-phone bg-1 text"><span class="phone-in-talk fa fa-phone fa-3x"></span></div>
                         </div>
                         <div class="media-body">
                             <h4 class="dark-blue regular">(numeros de telefone)</h4>
@@ -346,7 +346,7 @@
                     </div>
                     <div class="media-2">
                         <div class="media-left">
-                            <div class="contact-email bg-14 text-center"><span class="hour-icon fa fa-clock-o fa-3x"></span></div>
+                            <div class="contact-email bg-14 text"><span class="hour-icon fa fa-clock-o fa-3x"></span></div>
                         </div>
                         <div class="media-body">
                             <h4 class="dark-blue regular">opções de contato</h4>
