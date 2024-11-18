@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -43,7 +44,7 @@ namespace Sistemas_La_Dulce
             Console.WriteLine("Sair-q");
             op =Console.ReadLine();
              Menu m= new Menu();
-            Balanco_patrimonial b = new Balanco_patrimonial();
+            Balanco_patrimonial b = new Balanco_patrimonial(stringconexao);
             Estoque e = new Estoque(stringconexao);
             Fornecedores f = new Fornecedores();
             bool rodando = true;
@@ -53,12 +54,14 @@ namespace Sistemas_La_Dulce
                 switch (m.painel())
                 {
                     case "1":
+                        Console.WriteLine("Qual o id do produto?");
+                        int id = int.Parse(Console.ReadLine());
                         Console.Clear();
-                        e.menuestoque();
+                        e.menuestoque(id);
                         break;
                     case "2":
                         Console.Clear();
-                        b.verificacao();
+                        b.menuFinanceiro();
                         break;
                     case "3":
                         Console.Clear();

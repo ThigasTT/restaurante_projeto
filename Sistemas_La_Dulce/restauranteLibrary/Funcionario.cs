@@ -13,5 +13,6 @@ namespace restauranteLibrary
         public string Tel_C { get; set; }
         public string Email { get; set; }
         public string Data_de_Contratação { get; set; }
+
     }
 }

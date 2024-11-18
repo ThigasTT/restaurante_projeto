@@ -34,11 +34,10 @@ CREATE TABLE Produtos (
   idProdutos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
   Nome_P VARCHAR(45) NOT NULL,
-   Quantidade int not null,
   Validade DATE NOT NULL,
+  Quantidade int not null,
   Preço Double NOT NULL,
   Custo DOUBLE NOT NULL,
-  Saldo DOUBLE NOT NULL,
   PRIMARY KEY(idProdutos, Estabelecimento_idEstabelecimento)
 );
 
@@ -121,16 +120,23 @@ CREATE TABLE Estoque (
 CREATE TABLE Financeiro (
   idFinanceiro INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
-  Financeiro DOUBLE NOT NULL,
-  Despesas DOUBLE NOT NULL,
+  Ativo DOUBLE  NOT NULL,
+  Passivo DOUBLE  NOT NULL,
   Capital_Social DOUBLE NOT NULL,
   DRE DOUBLE NOT NULL,
   /*CMV DOUBLE NOT NULL,*/
   Salario_Fun DOUBLE NOT NULL,
+  Caixa DOUBLE NOT NULL,
+  Estoque DOUBLE NOT NULL,
+  Compras_prazo DOUBLE NOT NULL,
+  Emprestimos DOUBLE NOT NULL,
   PRIMARY KEY(idFinanceiro, Estabelecimento_idEstabelecimento),
   FOREIGN KEY(Estabelecimento_idEstabelecimento)
     REFERENCES Estabelecimento(idEstabelecimento)
 );
+
+
+insert into `restaurante`.`financeiro`(`idFinanceiro`,`Estabelecimento_idEstabelecimento`) values(1,1);
 
 CREATE TABLE Folha_Pag (
   idFolha_Pag INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
