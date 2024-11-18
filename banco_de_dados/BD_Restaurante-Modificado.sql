@@ -34,9 +34,11 @@ CREATE TABLE Produtos (
   idProdutos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
   Nome_P VARCHAR(45) NOT NULL,
+   Quantidade int not null,
   Validade DATE NOT NULL,
   Preço Double NOT NULL,
   Custo DOUBLE NOT NULL,
+  Saldo DOUBLE NOT NULL,
   PRIMARY KEY(idProdutos, Estabelecimento_idEstabelecimento)
 );
 

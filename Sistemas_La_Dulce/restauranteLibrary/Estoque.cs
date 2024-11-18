@@ -39,8 +39,10 @@ namespace restauranteLibrary
 
         public void menuestoque()
         {
+            
             Console.WriteLine("Qual o id do produto?");
-            CarregarDadosDoBanco(int.Parse(Console.ReadLine()));
+            this.id = int.Parse(Console.ReadLine());
+            CarregarDadosDoBanco(this.id);
             string op;
             Console.WriteLine("Estoque\n\n");
             Console.WriteLine("O que deseja fazer?");
@@ -112,13 +114,14 @@ namespace restauranteLibrary
         {
             try
             {
-                connection.Open(); // Abre a conexão com o banco de dados
+                connection.Open();
 
-                // Consulta SQL para buscar os dados do produto
+               
                 string query = "SELECT Nome_P, Quantidade, Custo FROM Produtos WHERE idProdutos = @idProduto";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@idProduto", id);
-          
+                    Console.WriteLine(id);
+                    Console.ReadKey();
                
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
