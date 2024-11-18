@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Runtime.InteropServices.ComTypes;
 using System.Security.AccessControl;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -99,6 +100,40 @@ namespace restauranteLibrary
             this.Saldo = this.Saldo + qtd * preco;
             this.Qtd_prod = this.Qtd_prod + qtd;
             this.c_prod = this.Saldo / this.Qtd_prod;
+
+            using (MySqlConnection connection = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    connection.Open();
+
+
+                    string query = "update Produtos SET Saldo = @saldo, Custo = @c_prod, Quantidade = @qtd where idProdutos = @id";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@saldo", this.Saldo);
+                    cmd.Parameters.AddWithValue("@c_prod", this.c_prod);
+                    cmd.Parameters.AddWithValue("@qtd", this.Qtd_prod);
+                    cmd.Parameters.AddWithValue("@id", this.id);
+
+                    int linhasAfetadas = cmd.ExecuteNonQuery();
+
+
+                    if (linhasAfetadas > 0)
+                    {
+                        Console.WriteLine("Produto atualizado com sucesso.");
+                        Thread.Sleep(1000);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nenhuma linha foi afetada. Verifique se o idProduto é válido.");
+                        Thread.Sleep(1000);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                }
+            }
         }
         public void redSaldo(int qtd)
         {
@@ -117,11 +152,11 @@ namespace restauranteLibrary
                 connection.Open();
 
                
-                string query = "SELECT Nome_P, Quantidade, Custo FROM Produtos WHERE idProdutos = @idProduto";
+                string query = "SELECT Nome_P, Quantidade, Custo, Saldo FROM Produtos WHERE idProdutos = @idProduto";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@idProduto", id);
-                    Console.WriteLine(id);
-                    Console.ReadKey();
+                  /*  Console.WriteLine(id);
+                    Console.ReadKey();*/
                
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -133,6 +168,7 @@ namespace restauranteLibrary
                     //    Validade = Convert.ToDateTime(reader["Validade"]);
                     //    Preco_prod = Convert.ToDouble(reader["Preço"]);
                         this.c_prod = Convert.ToDouble(reader["Custo"]);
+                            this.Saldo = Convert.ToDouble(reader["Saldo"]);
                     }
                     else
                     {
