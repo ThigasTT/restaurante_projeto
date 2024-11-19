@@ -24,7 +24,7 @@ namespace Sistemas_La_Dulce
                 conexao.ConnectionString = stringconexao;
                 conexao.Open();
                 Console.WriteLine("Conexão estabelecida");
-                Thread.Sleep(1000);
+                Thread.Sleep(100);
             }
             catch (Exception ex)
             {
@@ -32,6 +32,10 @@ namespace Sistemas_La_Dulce
                 Console.WriteLine("Erro! entre em contato com o administrador");
                 Console.ReadKey();
             }
+            Menu m = new Menu();
+            Balanco_patrimonial b = new Balanco_patrimonial(stringconexao);
+            Estoque e = new Estoque(stringconexao);
+            Fornecedores f = new Fornecedores(stringconexao);
 
             string op;
             Console.WriteLine("RESTAURANTE LA DULCE\n\n");
@@ -43,10 +47,7 @@ namespace Sistemas_La_Dulce
             Console.WriteLine("Recursos Humanos-5\n");
             Console.WriteLine("Sair-q");
             op =Console.ReadLine();
-             Menu m= new Menu();
-            Balanco_patrimonial b = new Balanco_patrimonial(stringconexao);
-            Estoque e = new Estoque(stringconexao);
-            Fornecedores f = new Fornecedores();
+ 
             bool rodando = true;
 
             while (rodando)

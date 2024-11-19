@@ -74,11 +74,11 @@ namespace restauranteLibrary
                         Console.WriteLine("Digite a quantidade de itens que sairão\n");
                         redSaldo(int.Parse(Console.ReadLine()));
                         break;
-                    case "4":
+                    /*case "4":
                     Console.WriteLine("Qual o nome do produto?");
                     string nome = Console.ReadLine();
                     Estoque e = new Estoque(nome);
-                    break;
+                    break;*/
                     case "q":
                     Thread.Sleep(1000); 
                     return;
@@ -87,7 +87,7 @@ namespace restauranteLibrary
                 }
             }
        
-
+ 
         public void exibir()
         {
             Console.WriteLine("Nome do produto: {0}\n", this.Nome_prod);

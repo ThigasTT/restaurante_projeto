@@ -38,6 +38,7 @@ CREATE TABLE Produtos (
   Quantidade int not null,
   Preço Double NOT NULL,
   Custo DOUBLE NOT NULL,
+  Saldo double not null,
   PRIMARY KEY(idProdutos, Estabelecimento_idEstabelecimento)
 );
 
@@ -70,7 +71,7 @@ INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES (
 INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('27', 'Gin Maça Verde', '49.90');
 INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('28', 'Maragarita', '42.90');
 
-
+select * from produtos where idProdutos = 10;
 
 CREATE TABLE Recursos_Humanos (
   idRecursos_Humanos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -95,16 +96,19 @@ INSERT INTO `restaurante`.`Recursos_Humanos` (`idRecursos_Humanos`,`idEstabeleci
 CREATE TABLE Fornecedores (
   idFornecedores INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
-  Logadouro VARCHAR(45) NOT NULL,
+  Nome varchar(45) not null,
+  Logradouro VARCHAR(45) NOT NULL,
   CNPJ VARCHAR(45) NOT NULL,
   Complemento VARCHAR(45) NULL,
   CEP VARCHAR(45) NOT NULL,
   Tel_C VARCHAR(45) NOT NULL,
-  Tempo_Contrato DATE NOT NULL,
+  Tempo_Contrato varchar(10) NOT NULL,
   PRIMARY KEY(idFornecedores, Estabelecimento_idEstabelecimento),
   FOREIGN KEY(Estabelecimento_idEstabelecimento)
     REFERENCES Estabelecimento(idEstabelecimento)
 );
+
+insert into Fornecedores values(1,1,'fornecedor1','rua','12345678','casa1','0000000','00000-0000',0000-00-00);
 
 CREATE TABLE Estoque (
   idEstoque INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
