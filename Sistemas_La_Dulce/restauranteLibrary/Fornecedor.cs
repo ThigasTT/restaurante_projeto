@@ -45,6 +45,7 @@ namespace restauranteLibrary
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("Olhar as infomações do fornecedor - 1");
             Console.WriteLine("Cadastrar um fornecedor - 2");
+            Console.WriteLine("Atualizar as informações de um fornecedor - 3");
             Console.WriteLine("Sair - q");
             op = Console.ReadLine();
             escolha(op);
@@ -59,6 +60,11 @@ namespace restauranteLibrary
                     break;
                 case "2":
                     cadastro();
+                    break;
+                case "3":
+                    Console.WriteLine("Qual o nome do fornecedor?");
+                    string nome = Console.ReadLine();
+                    atualizar(nome);
                     break;
                 case "q":
                     break;
@@ -123,6 +129,16 @@ namespace restauranteLibrary
                     Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
                 }
             }
+        }
+
+        public void atualizar(string nome) 
+        {
+            Console.WriteLine("O que você quer atualizar?");
+            Console.WriteLine("Nome - 1");
+            Console.WriteLine("Endereço - 2");
+            Console.WriteLine("telefone - 3");
+
+
         }
             public Fornecedores(string conn)
         {

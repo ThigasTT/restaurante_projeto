@@ -14,5 +14,6 @@ namespace restauranteLibrary
         public double Hora_Extra { get; set; }
         public int Jornada_Mês { get; set; }
 
+
     }
 }
