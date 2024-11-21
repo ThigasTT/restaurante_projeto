@@ -11,6 +11,14 @@ width: 55%;
 height: 55%;
 }
 
+#contact{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 ul
 {
 list-style:none;
@@ -21,6 +29,11 @@ color:#ffffff;
 font-size:16px;
 
 }
+#container,p,h4{
+
+  color: white;
+}
+
 .section-padding{
 padding: 60px 0px;
 }
