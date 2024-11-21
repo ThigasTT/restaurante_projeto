@@ -17,3 +17,9 @@
   });
 
   })(jQuery);
+
+  ScrollReveal().reveal('.op1',{
+    origin: 'left',
+    duration :2000,
+    distance:'20%'
+    });

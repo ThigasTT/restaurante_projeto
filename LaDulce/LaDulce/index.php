@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'><link rel="stylesheet" href="style.css">
-
+<script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 <style>
-    *{
+    body{
         background-image: url(restaurante-2560-x-1532-pqjzgouwuva4s618.jpg);
         background-attachment: fixed, scroll;
         background-repeat: no-repeat, repeat-y;
@@ -36,10 +36,11 @@ color:#ffffff;
 font-family: Satisfy,'Open Sans',arial;
 font-size: 1.2rem;
 }
+
 </style>
 <section id="menu-lista" class="section-padding">
   <div class="container">
-  <div class="row">
+  <div style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="row">
 <div class=" op1">
   <h1 class="header-h">La Dulce</h1>
   <p  class="header-p">O melhor restaurante do mercado
@@ -72,7 +73,8 @@ font-size: 1.2rem;
                 <span style="left:166px;right:44px;" class="menu-line"></span>
                 <span class="menu-preco">R$22.90</span>
             </span>
-            <span class="menu-subtitulo">Ingredientes não listados</span>
+            <span class="menu-subtitulo">sopa de açúcar,leite condensado e lata de leite.
+3 ovos</span>
         </div>
         
         <div class="menu-restaurante">    <img style="width: 45%; height: 45%; border-radius: 30px;" class="IMG" src="https://img.freepik.com/fotos-premium/bolinhas-de-sorvete-de-morango-de-baunilha-e-chocolate-com-wafer-stick-em-uma-tigela-de-sundae-ou-sorvete-em-s_651618-1246.jpg">
@@ -407,9 +409,9 @@ include_once ("avaliacao_form.php");
 </html>
 
   
-</section >
+</section ><section  id="contact" class="section-padding">
 <div style="display: none;" class="dinner menu-restaurante ">
- <section  id="contact" class="section-padding">
+ 
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -425,8 +427,8 @@ include_once ("avaliacao_form.php");
                             <div class="contact-phone bg-1 text-center"><span class="phone-in-talk fa fa-phone fa-3x"></span></div>
                         </div>
                         <div class="media-body">
-                            <h4 class="dark-blue regular">(numeros de telefone)</h4>
-                            <p class="light-blue regular alt-p">1155000000000 - <span class="contacts-sp">(contato)</span></p>
+                            <h4 class="dark-blue regular">Número de contato</h4>
+                            <p class="light-blue regular alt-p">5511983226666 - <span class="contacts-sp"></span></p>
                         </div>
                     </div>
                     <div class="media-2">
@@ -434,10 +436,14 @@ include_once ("avaliacao_form.php");
                             <div class="contact-email bg-14 text-center"><span class="hour-icon fa fa-clock-o fa-3x"></span></div>
                         </div>
                         <div class="media-body">
-                            <h4 class="dark-blue regular">opções de contato</h4>
-                            <p class="light-blue regular alt-p"> opcões de contato</p>
+                            <h4 class="dark-blue regular">Horário de atendimento</h4>
+                            <p class="light-blue regular alt-p">Seg á Sex.</p>
                             <p class="light-blue regular alt-p">
-                               00:00 - 00.00
+                               08:00 - 22.00
+                            </p>
+                            <p class="light-blue regular alt-p">Sáb á Dom.</p>
+                            <p class="light-blue regular alt-p">
+                               12:00 - 18.00
                             </p>
                         </div>
                     </div>
@@ -460,6 +466,8 @@ include_once "form_user.php";
         </div>
     </section>
 </div>
+
+
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
 
