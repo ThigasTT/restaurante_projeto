@@ -36,6 +36,7 @@ namespace Sistemas_La_Dulce
             Balanco_patrimonial b = new Balanco_patrimonial(stringconexao);
             Estoque e = new Estoque(stringconexao);
             Fornecedores f = new Fornecedores(stringconexao);
+            Funcionario func = new Funcionario(stringconexao);
 
             string op;
             Console.WriteLine("RESTAURANTE LA DULCE\n\n");
@@ -72,6 +73,7 @@ namespace Sistemas_La_Dulce
                         Console.Clear();
                         break;
                     case "5":
+                        
                         Console.Clear();
                         break;
                     case "q":

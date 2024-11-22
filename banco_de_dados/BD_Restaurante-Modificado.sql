@@ -80,7 +80,7 @@ CREATE TABLE Recursos_Humanos (
   Cargo VARCHAR(45) NOT NULL,
   Tel_C VARCHAR(45) NOT NULL,
   Email VARCHAR(45) NOT NULL,
-  Data_de_Contratação DATE NOT NULL,
+  Data_de_Contratação varchar(45) NOT NULL,
   PRIMARY KEY(idRecursos_Humanos),
   foreign key (idEstabelecimento) references Estabelecimento (idEstabelecimento)
 );

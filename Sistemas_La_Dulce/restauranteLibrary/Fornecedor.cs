@@ -46,6 +46,7 @@ namespace restauranteLibrary
             Console.WriteLine("Olhar as infomações do fornecedor - 1");
             Console.WriteLine("Cadastrar um fornecedor - 2");
             Console.WriteLine("Atualizar as informações de um fornecedor - 3");
+            Console.WriteLine("Deletar um fornecedor - 4");
             Console.WriteLine("Sair - q");
             op = Console.ReadLine();
             escolha(op);
@@ -63,8 +64,12 @@ namespace restauranteLibrary
                     break;
                 case "3":
                     Console.WriteLine("Qual o nome do fornecedor?");
-                    string nome = Console.ReadLine();
-                    atualizar(nome);
+                    string nomeA = Console.ReadLine();
+                    atualizar(nomeA);
+                    break;
+                case "4":
+                    Console.WriteLine("Qual o nome do fornecedor?");
+                    string nomeD = Console.ReadLine();
                     break;
                 case "q":
                     break;
@@ -131,14 +136,136 @@ namespace restauranteLibrary
             }
         }
 
-        public void atualizar(string nome) 
+        public void atualizar(string nomeAt) 
         {
             Console.WriteLine("O que você quer atualizar?");
-            Console.WriteLine("Nome - 1");
-            Console.WriteLine("Endereço - 2");
-            Console.WriteLine("telefone - 3");
+            Console.WriteLine("Endereço - 1");
+            Console.WriteLine("telefone - 2");
+
+            string op = Console.ReadLine();
+
+            switch (op)
+            {
+                case "1":
+                    Console.WriteLine("Digite o novo CEP");
+                    string cep = Console.ReadLine();
+                    this.Cep = cep;
+                    Console.WriteLine("Digite o novo logradouro");
+                    string logradouro = Console.ReadLine();
+                    this.Logradouro = logradouro;
+                    using (MySqlConnection connection = new MySqlConnection(conexao))
+                    {
+                        try
+                        {
+                            connection.Open();
 
 
+                            string query = "update fornecedores set CEP = @cep, Logradouro = @logradouro where Nome = @nome";
+                            MySqlCommand cmd = new MySqlCommand(query, connection);
+                            cmd.Parameters.AddWithValue("@Logradouro", this.Logradouro);
+                            cmd.Parameters.AddWithValue("@CEP", this.Cep);
+                            cmd.Parameters.AddWithValue("@nome", nomeAt);
+
+
+                            int linhasAfetadas = cmd.ExecuteNonQuery();
+
+
+                            if (linhasAfetadas > 0)
+                            {
+                                Console.WriteLine("Fornecedor atualizado com sucesso.");
+                                Thread.Sleep(1000);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Nenhuma linha foi afetada.");
+                                Thread.Sleep(1000);
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                        }
+                    }
+            
+            break;
+                case "2":
+                    Console.WriteLine("Qual o novo numero de telefone?");
+                    string telefone = Console.ReadLine();
+                    this.Tel_C = telefone;
+
+                    using (MySqlConnection connection = new MySqlConnection(conexao))
+                    {
+                        try
+                        {
+                            connection.Open();
+
+
+                            string query = "update fornecedores set Tel_C = @telefone where Nome = @nome";
+                            MySqlCommand cmd = new MySqlCommand(query, connection);
+                            cmd.Parameters.AddWithValue("@telefone", this.Tel_C);
+                            cmd.Parameters.AddWithValue("@nome", nomeAt);
+
+                            int linhasAfetadas = cmd.ExecuteNonQuery();
+
+
+                            if (linhasAfetadas > 0)
+                            {
+                                Console.WriteLine("Fornecedor atualizado com sucesso.");
+                                Thread.Sleep(1000);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Nenhuma linha foi afetada.");
+                                Thread.Sleep(1000);
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                        }
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida");
+                    break;
+            }
+        }
+        public void deletar(string nomeDel)
+        {
+            using (MySqlConnection connection = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    connection.Open();
+
+
+                    string query = "delete from fornecedores where Nome = @nome";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@nome", nomeDel);
+
+
+                    int linhasAfetadas = cmd.ExecuteNonQuery();
+
+
+                    if (linhasAfetadas > 0)
+                    {
+                        Console.WriteLine("Fornecedor atualizado com sucesso.");
+                        Thread.Sleep(1000);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nenhuma linha foi afetada.");
+                        Thread.Sleep(1000);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                }
+            }
         }
             public Fornecedores(string conn)
         {
