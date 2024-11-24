@@ -1,31 +1,40 @@
 create database Restaurante;
 use Restaurante;
 
-
+drop database Restaurante;
 CREATE TABLE Estabelecimento (
-  idEstabelecimento INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  CEP INT NOT NULL,
-  Tel_C INT NOT NULL,
+  idEstabelecimento INTEGER,
+  CEP varchar(50) not NULL,
+  Tel_C varchar(23) NOT NULL,
   Propriétario VARCHAR(45) NOT NULL,
-  CNPJ INT NOT NULL,
+  CNPJ varchar(16) NOT NULL,
   PRIMARY KEY(idEstabelecimento)
 );
 INSERT INTO `restaurante`.`Estabelecimento` (`idEstabelecimento`, `CEP`, `Tel_C`, `Propriétario`, `CNPJ`) VALUES ('1', '21213232221', '117950584', 'Amandha', '00623904000173');
+CREATE TABLE Avaliacao (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    estrelas INT NOT NULL CHECK (estrelas >= 1 AND estrelas <= 5),
+    avaliacao VARCHAR(250) not null,
+    nome varchar(60) not null,
+    email varchar(80) not null
+);
+select * from Avaliacao;
 
-
+select * from Pedido;
 CREATE TABLE Pedido (
   idPedido INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
-  Pedido varchar(45) NOT NULL,
-  Compra DOUBLE NOT NULL,
-  Nome_cli VARCHAR(45) NOT NULL,
-  Telefone_cli VARCHAR(45) NOT NULL,
-  Data_reserva DATE NOT NULL,
-  N_Pessoas INT NOT NULL,
-  Tipo_reserv VARCHAR(45) NOT NULL,
-  Descrição_Event VARCHAR(45) NOT NULL,
-  Status_2 VARCHAR(45) NOT NULL,
-  PRIMARY KEY(idPedido, Estabelecimento_idEstabelecimento),
+  Estabelecimento_idEstabelecimento INTEGER,
+  Pedido varchar(45),
+  Compra DOUBLE ,
+  Nome_cli VARCHAR(45) ,
+  email varchar(80) ,
+  Telefone_cli VARCHAR(45) ,
+  Data_reserva DATE ,
+  N_Pessoas INT ,
+  Tipo_reserv VARCHAR(45) ,
+  Descrição_Event VARCHAR(45) ,
+  Status_2 VARCHAR(45) ,
+  PRIMARY KEY(idPedido),
   FOREIGN KEY(Estabelecimento_idEstabelecimento)
     REFERENCES Estabelecimento(idEstabelecimento)
 );
@@ -154,4 +163,3 @@ CREATE TABLE Folha_Pag (
   PRIMARY KEY(idFolha_Pag),
   foreign key(idRecursos_Humanos) references Recursos_Humanos(idRecursos_Humanos)
 );
-
