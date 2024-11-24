@@ -377,9 +377,9 @@ font-size: 1.2rem;
             <span class="clearfix">
             <img style="width: 30px" style="height: 100px"  src="vecteezy_user-icon-on-transparent-background_19879186.png" alt="">      <p style="color: #ffffff;">Kevin</p>
                 <span style="left:10px;right:10px;" class="menu-line"></span>
-                <span class="menu-preco">⭐⭐⭐⭐</span>
+                <span class="menu-preco">⭐⭐⭐⭐⭐</span>
             </span>
-            <span class="menu-subtitulo">Ótima comida, fiquei super satisfeito</span>
+            <span class="menu-subtitulo">Comida Maravilhosa, com certeza irei mais vezes!!!</span>
         </div>
     </div>
     <div style="display: none;" class="ava menu-restaurante ">
@@ -388,7 +388,7 @@ font-size: 1.2rem;
                 <span style="left:10px;right:10px;" class="menu-line"></span>
                 <span class="menu-preco">⭐⭐⭐⭐⭐</span>
             </span>
-            <span class="menu-subtitulo">Ótima comida, fiquei super satisfeito</span>
+            <span class="menu-subtitulo">Nunca comi algo tâo saboroso, o Resturante está de parabêns</span>
         </div>
     </div>
     <div style="display: none;" class="ava menu-restaurante ">
@@ -397,7 +397,7 @@ font-size: 1.2rem;
                 <span style="left:10px;right:10px;" class="menu-line"></span>
                 <span class="menu-preco">⭐⭐⭐⭐⭐</span>
             </span>
-            <span class="menu-subtitulo">Ótima comida, fiquei super satisfeito</span>
+            <span class="menu-subtitulo">Resturante excepcional!!!</span>
         </div>
     </div>
     <div style="display: none;" class="ava menu-restaurante ">

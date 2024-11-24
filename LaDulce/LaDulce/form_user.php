@@ -12,9 +12,6 @@ include_once "header.php";
 }
   
 
-    input{
-        color: black;
-    }
 
 </style>
 <form action="form.php" method="post">
