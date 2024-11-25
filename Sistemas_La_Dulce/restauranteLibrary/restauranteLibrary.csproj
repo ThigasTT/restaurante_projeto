@@ -52,7 +52,6 @@
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Folha_pag.cs" />
-    <Compile Include="Reserva.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

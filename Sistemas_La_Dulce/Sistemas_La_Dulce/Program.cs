@@ -38,18 +38,16 @@ namespace Sistemas_La_Dulce
             Fornecedores f = new Fornecedores(stringconexao);
             Funcionario func = new Funcionario(stringconexao);
 
-            string op;
+            bool rodando = true;
+            /*string op;
             Console.WriteLine("RESTAURANTE LA DULCE\n\n");
             Console.WriteLine("Onde você deseja ir?\n");
             Console.WriteLine("Estoque-1\n");
             Console.WriteLine("Financeiro-2\n");
             Console.WriteLine("Fornecedores-3\n");
-            Console.WriteLine("Reservas-4\n");
-            Console.WriteLine("Recursos Humanos-5\n");
+            Console.WriteLine("Recursos Humanos-4\n");
             Console.WriteLine("Sair-q");
-            op =Console.ReadLine();
- 
-            bool rodando = true;
+            op =Console.ReadLine();*/
 
             while (rodando)
             {
@@ -71,10 +69,7 @@ namespace Sistemas_La_Dulce
                         break;
                     case "4":
                         Console.Clear();
-                        break;
-                    case "5":
-                        
-                        Console.Clear();
+                        func.menuFunc();
                         break;
                     case "q":
                         rodando = false;

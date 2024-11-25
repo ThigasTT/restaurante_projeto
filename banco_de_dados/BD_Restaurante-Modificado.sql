@@ -1,7 +1,6 @@
 create database Restaurante;
 use Restaurante;
 
-drop database Restaurante;
 CREATE TABLE Estabelecimento (
   idEstabelecimento INTEGER,
   CEP varchar(50) not NULL,
@@ -18,9 +17,7 @@ CREATE TABLE Avaliacao (
     nome varchar(60) not null,
     email varchar(80) not null
 );
-select * from Avaliacao;
 
-select * from Pedido;
 CREATE TABLE Pedido (
   idPedido INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Estabelecimento_idEstabelecimento INTEGER,
@@ -82,29 +79,29 @@ INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES (
 
 select * from produtos where idProdutos = 10;
 
-CREATE TABLE Recursos_Humanos (
-  idRecursos_Humanos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  idEstabelecimento INTEGER UNSIGNED NOT NULL,
+CREATE TABLE Funcionario (
+  idFuncionario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  idEstabelecimento INTEGER ,
   Nome VARCHAR(45) NOT NULL,
   Cargo VARCHAR(45) NOT NULL,
   Tel_C VARCHAR(45) NOT NULL,
   Email VARCHAR(45) NOT NULL,
-  Data_de_Contratação varchar(45) NOT NULL,
-  PRIMARY KEY(idRecursos_Humanos),
+  Data_de_Contratacao varchar(45) NOT NULL,
+  PRIMARY KEY(idFuncionario),
   foreign key (idEstabelecimento) references Estabelecimento (idEstabelecimento)
 );
 
-INSERT INTO `restaurante`.`Recursos_Humanos` (`idRecursos_Humanos`,`idEstabelecimento`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratação`) VALUES ('1','1', 'Rafael Santos', 'Garçom','(11)98754-4321','rafael.santos@restaurante.com','11/2/2022');
-INSERT INTO `restaurante`.`Recursos_Humanos` (`idRecursos_Humanos`,`idEstabelecimento`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratação`) VALUES ('2','1', 'Carlos Oliveira', 'Cozinheiro','(11)97654-3218','carlos.oliveira@restaurante.com','1/6/2022');
-INSERT INTO `restaurante`.`Recursos_Humanos` (`idRecursos_Humanos`,`idEstabelecimento`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratação`) VALUES ('3','1', 'Clara Silva', 'Gerente','(11)96543-3217','rafael.santos@restaurante.com','2/5/2023');
-INSERT INTO `restaurante`.`Recursos_Humanos` (`idRecursos_Humanos`,`idEstabelecimento`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratação`) VALUES ('4','1', 'Maria Pereira', 'Recepcionista','(11)95432-1678','maria.pereira@restaurante.com','10/12/2023');
+INSERT INTO `restaurante`.`Funcionario` (`idFuncionario`,`idEstabelecimento`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratacao`) VALUES ('1','1', 'Rafael Santos', 'Garçom','(11)98754-4321','rafael.santos@restaurante.com','11/2/2022');
+INSERT INTO `restaurante`.`Funcionario` (`idFuncionario`,`idEstabelecimento`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratacao`) VALUES ('2','1', 'Carlos Oliveira', 'Cozinheiro','(11)97654-3218','carlos.oliveira@restaurante.com','1/6/2022');
+INSERT INTO `restaurante`.`Funcionario` (`idFuncionario`,`idEstabelecimento`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratacao`) VALUES ('3','1', 'Clara Silva', 'Gerente','(11)96543-3217','rafael.santos@restaurante.com','2/5/2023');
+INSERT INTO `restaurante`.`Funcionario` (`idFuncionario`,`idEstabelecimento`, `Nome`, `Cargo`,`Tel_C`,`Email`,`Data_de_Contratacao`) VALUES ('4','1', 'Maria Pereira', 'Recepcionista','(11)95432-1678','maria.pereira@restaurante.com','10/12/2023');
 
 
 
 
 CREATE TABLE Fornecedores (
   idFornecedores INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
+  Estabelecimento_idEstabelecimento INTEGER ,
   Nome varchar(45) not null,
   Logradouro VARCHAR(45) NOT NULL,
   CNPJ VARCHAR(45) NOT NULL,
@@ -121,7 +118,7 @@ insert into Fornecedores values(1,1,'fornecedor1','rua','12345678','casa1','0000
 
 CREATE TABLE Estoque (
   idEstoque INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
+  Estabelecimento_idEstabelecimento INTEGER,
   Quantidade_P INT NOT NULL,
   Custo_Unitário DOUBLE NOT NULL,
   Nome_P VARCHAR(45) NOT NULL,
@@ -132,7 +129,7 @@ CREATE TABLE Estoque (
 
 CREATE TABLE Financeiro (
   idFinanceiro INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Estabelecimento_idEstabelecimento INTEGER UNSIGNED NOT NULL,
+  Estabelecimento_idEstabelecimento INTEGER ,
   Ativo DOUBLE  NOT NULL,
   Passivo DOUBLE  NOT NULL,
   Capital_Social DOUBLE NOT NULL,
@@ -153,13 +150,13 @@ insert into `restaurante`.`financeiro`(`idFinanceiro`,`Estabelecimento_idEstabel
 
 CREATE TABLE Folha_Pag (
   idFolha_Pag INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  idRecursos_Humanos INTEGER UNSIGNED NOT NULL,
-  idEstabelecimento INTEGER UNSIGNED NOT NULL,
+  idFuncionario INTEGER UNSIGNED NOT NULL,
+  idEstabelecimento INTEGER ,
   Salario DOUBLE NOT NULL,
   Faltas INT NOT NULL,
   Atrasos TIME NOT NULL,
   Hora_Extra TIME NOT NULL,
   Jornada_Mês INT NOT NULL,
   PRIMARY KEY(idFolha_Pag),
-  foreign key(idRecursos_Humanos) references Recursos_Humanos(idRecursos_Humanos)
+  foreign key(idFuncionario) references Funcionario(idFuncionario)
 );

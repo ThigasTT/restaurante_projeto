@@ -246,6 +246,7 @@ namespace restauranteLibrary
                     verifica();
                     break;
                 case "q":
+                    Thread.Sleep(1000);
                     break;
                 default:
                     Console.WriteLine("Opção inválida.");

@@ -81,7 +81,7 @@ namespace restauranteLibrary
                     break;*/
                     case "q":
                     Thread.Sleep(1000); 
-                    return;
+                    break;
                   
 
                 }

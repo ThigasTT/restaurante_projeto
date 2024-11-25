@@ -34,13 +34,13 @@ namespace restauranteLibrary
             Console.WriteLine("CEP: {0}", this.Cep);
             Console.WriteLine("Telefone: {0}", this.Tel_C);
             Console.WriteLine("Tempo de contrato: {0}", this.Tempo_Contrato);
+            Console.WriteLine("\nAperte qualquer tecla para voltar");
             Console.ReadKey();
         }
         public void MenuForn()
         {
             string op;
             Console.Clear();
-            carregarDadosDoBanco();
             Console.WriteLine("Fornecedor");
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("Olhar as infomações do fornecedor - 1");
@@ -57,7 +57,11 @@ namespace restauranteLibrary
             switch (op)
             {
                 case "1":
-                    Exibir(); 
+                    Console.WriteLine("Qual o nome do fornecedor?");
+                    string nomeForn = Console.ReadLine();
+                    carregarDadosDoBanco(nomeForn);
+                    Exibir();
+                    MenuForn();
                     break;
                 case "2":
                     cadastro();
@@ -70,8 +74,10 @@ namespace restauranteLibrary
                 case "4":
                     Console.WriteLine("Qual o nome do fornecedor?");
                     string nomeD = Console.ReadLine();
+                    deletar(nomeD);
                     break;
                 case "q":
+                    Thread.Sleep(1000);
                     break;
                 default:
                     Console.WriteLine("Opção inválida, tente novamente");
@@ -92,6 +98,8 @@ namespace restauranteLibrary
             this.Tel_C = Console.ReadLine();
             Console.WriteLine("Qual o cep do fornecedor?");
             this.Cep = Console.ReadLine();
+            Console.WriteLine("Possui algum complemento? se não, digite 0");
+            this.Complemento = Console.ReadLine();
             Console.WriteLine("Qual o tempo de contrato do fornecedor?");
             this.Tempo_Contrato = Console.ReadLine();
 
@@ -143,7 +151,6 @@ namespace restauranteLibrary
             Console.WriteLine("telefone - 2");
 
             string op = Console.ReadLine();
-
             switch (op)
             {
                 case "1":
@@ -153,6 +160,8 @@ namespace restauranteLibrary
                     Console.WriteLine("Digite o novo logradouro");
                     string logradouro = Console.ReadLine();
                     this.Logradouro = logradouro;
+                    Console.WriteLine("Digite o novo complemento, se houver");
+                    this.Complemento = Console.ReadLine();
                     using (MySqlConnection connection = new MySqlConnection(conexao))
                     {
                         try
@@ -160,11 +169,12 @@ namespace restauranteLibrary
                             connection.Open();
 
 
-                            string query = "update fornecedores set CEP = @cep, Logradouro = @logradouro where Nome = @nome";
+                            string query = "update fornecedores set CEP = @cep, Logradouro = @logradouro, complemento = @complemento where Nome = @nome";
                             MySqlCommand cmd = new MySqlCommand(query, connection);
                             cmd.Parameters.AddWithValue("@Logradouro", this.Logradouro);
                             cmd.Parameters.AddWithValue("@CEP", this.Cep);
                             cmd.Parameters.AddWithValue("@nome", nomeAt);
+                            cmd.Parameters.AddWithValue("@complemento", this.Complemento);
 
 
                             int linhasAfetadas = cmd.ExecuteNonQuery();
@@ -273,7 +283,7 @@ namespace restauranteLibrary
             this.Nome = "fornecedor1";
 
         }
-        public void carregarDadosDoBanco()
+        public void carregarDadosDoBanco(string nome)
         {
             using (MySqlConnection connection = new MySqlConnection(conexao))
             {
@@ -282,7 +292,7 @@ namespace restauranteLibrary
                     connection.Open();
                     string query = "select idFornecedores, nome, Logradouro, CNPJ, Complemento, CEP, Tel_C, Tempo_Contrato from fornecedores where Nome = @nome";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
-                    cmd.Parameters.AddWithValue("@nome", this.Nome);
+                    cmd.Parameters.AddWithValue("@nome", nome);
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {

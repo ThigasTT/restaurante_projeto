@@ -18,8 +18,7 @@ namespace restauranteLibrary
             Console.WriteLine("Estoque-1\n");
             Console.WriteLine("Financeiro-2\n");
             Console.WriteLine("Fornecedores-3\n");
-            Console.WriteLine("Reservas-4\n");
-            Console.WriteLine("Recursos Humanos-5\n");
+            Console.WriteLine("Recursos Humanos-4\n");
             Console.WriteLine("Sair-q");
             op = Console.ReadLine();
 
