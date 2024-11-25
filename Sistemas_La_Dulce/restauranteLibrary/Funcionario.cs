@@ -17,7 +17,7 @@ namespace restauranteLibrary
         public string Email { get; set; }
         public string Data_de_Contratacao { get; set; }
         public string conexao;
-
+        public Folha_pag fol;
         public Funcionario(string conexao)
         {
             this.conexao = conexao; 
@@ -30,6 +30,7 @@ namespace restauranteLibrary
             Console.WriteLine("Cadastrar Funcionário - 2");
             Console.WriteLine("Atualizar dados do funcionario - 3");
             Console.WriteLine("Deletar um funcionário - 4");
+            Console.WriteLine("Consultar a folha de pagamento - 5");
             Console.WriteLine("Sair - q");
             string op = Console.ReadLine();
             escolha(op);
@@ -55,6 +56,13 @@ namespace restauranteLibrary
                     nomeFunc = Console.ReadLine();
                     atualizar(nomeFunc);
                     break;
+                case "4":
+                    Console.WriteLine("Qual funcionário você quer deletar? (digite o nome)");
+                    nomeFunc = Console.ReadLine();
+                    deletarFunc(nomeFunc);
+                    break;
+                case "5":
+
                 case "q":
                     Thread.Sleep(1000);
                     break;
@@ -312,6 +320,45 @@ namespace restauranteLibrary
                     Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
                 }
             }
+        }
+        public void deletarFunc(string nomeDel)
+        {
+            using (MySqlConnection connection = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    connection.Open();
+
+
+                    string query = "delete from funcionario where Nome = @nome";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@nome", nomeDel);
+
+
+                    int linhasAfetadas = cmd.ExecuteNonQuery();
+
+
+                    if (linhasAfetadas > 0)
+                    {
+                        Console.WriteLine("Fornecedor deletado com sucesso.");
+                        Thread.Sleep(1000);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nenhuma linha foi afetada.");
+                        Thread.Sleep(1000);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                }
+            }
+        }
+        public void folha_Pagamento()
+        {
+            fol.conexao = conexao;
         }
         public void carregarDadosDoBanco(string nome) 
         {

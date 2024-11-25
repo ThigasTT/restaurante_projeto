@@ -77,7 +77,6 @@ INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES (
 INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('27', 'Gin Maça Verde', '49.90');
 INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('28', 'Maragarita', '42.90');
 
-select * from produtos where idProdutos = 10;
 
 CREATE TABLE Funcionario (
   idFuncionario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,

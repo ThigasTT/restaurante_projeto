@@ -261,7 +261,7 @@ namespace restauranteLibrary
 
                     if (linhasAfetadas > 0)
                     {
-                        Console.WriteLine("Fornecedor atualizado com sucesso.");
+                        Console.WriteLine("Fornecedor deletado com sucesso.");
                         Thread.Sleep(1000);
                     }
                     else

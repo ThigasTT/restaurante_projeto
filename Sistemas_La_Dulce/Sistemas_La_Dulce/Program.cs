@@ -37,6 +37,7 @@ namespace Sistemas_La_Dulce
             Estoque e = new Estoque(stringconexao);
             Fornecedores f = new Fornecedores(stringconexao);
             Funcionario func = new Funcionario(stringconexao);
+            Folha_pag fol = new Folha_pag(stringconexao);
 
             bool rodando = true;
             /*string op;
