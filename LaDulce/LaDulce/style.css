@@ -1,0 +1,158 @@
+
+.header-h {
+  font-size: 35px;
+color: #FFB03B;
+font-size: 46px;
+font-family: 'Satisfy', sans-serif;
+font-weight: 300;
+}
+.IMG{
+width: 55%;
+height: 55%;
+}
+
+#contact{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul
+{
+list-style:none;
+
+}
+.header-p {
+color:#ffffff;
+font-size:16px;
+
+}
+#container,p,h4{
+
+  color: white;
+}
+
+.section-padding{
+padding: 60px 0px;
+}
+.op1{
+margin-bottom:35px;
+}
+.menu-restaurante
+{
+width:50%;
+float:left;
+padding:15px;
+position:realtive;
+
+}
+.menu-restaurante .menu-titulo
+{
+float:left;
+font-family:Montserrat,arial;
+text-transform:uppercase;
+letter-spacing:1px;
+color: #FFB03B;
+}
+
+.menu-preco{
+font-weight:600;
+position:absolute;
+right:0;
+top:0;
+color: #FFB03B;
+}
+.menu-restaurante .menu-subtitulo
+{
+display:block;
+float:left;
+color:#000000;
+font-family: Satisfy,'Open Sans',arial;
+font-size: 1.2rem;
+}
+.menu-restaurante span.clearfix{
+position:relative;
+display:block;
+}
+
+
+
+
+#menu-filtros ul li a.active, #menu-filtros ul li a:hover
+{
+background: #FFB03B;
+color:#fff;
+border:1px solid #FFB03B;
+}
+#menu-filtros ul li 
+{
+display:inline-block;
+color:#fff;
+text-transform:capitalize;
+letter-spacing:1px;
+margin-botttom:40px;
+}
+#menu-filtros ul li a
+{
+padding:10px 20px;
+font-size:14px;
+color:#565656;
+border-radius:0px;
+border:1px solid #BBBBBB;
+text-decoration:none;
+cursor:pointer;
+}
+
+.secoes { display: none; }
+@media (min-width: 20px) and (max-width: 450px) 
+{
+.menu-restaurante
+{
+width: 100%;
+}
+.header-h
+{
+font-size: 35px;
+}
+.header-p 
+{
+font-size: 14px;
+}
+
+}
+
+
+
+.validation {
+color: red;
+display:none;
+margin: 0 0 20px;
+font-weight:400;
+font-size:13px;
+}
+
+#sendmessage {
+color: green;
+border:1px solid green;
+display:none;
+text-align:center;
+padding:15px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+#errormessage {
+color: red;
+display:none;
+border:1px solid red;
+text-align:center;
+padding:15px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+#sendmessage.show, #errormessage.show, .show {
+display:block;
+}
