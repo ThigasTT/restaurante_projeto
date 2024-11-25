@@ -471,5 +471,12 @@ include_once "form_user.php";
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
 
+                            <div class="copyright">
+                     <footer id="copy">
+                        &copy; CopyRight 2024 - Todos os Direitos Reservados<br>
+                        Thiago Caetano, Gustavo Muniz, Jeferson Brandão, Rhaul Araujo
+                     </footer>
+                </div>
+
 </body>
 </html>
