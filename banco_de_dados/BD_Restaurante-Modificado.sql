@@ -155,7 +155,7 @@ CREATE TABLE Folha_Pag (
   Faltas INT NOT NULL,
   Atrasos TIME NOT NULL,
   Hora_Extra TIME NOT NULL,
-  Jornada_Mês INT NOT NULL,
+  Jornada_Mes INT NOT NULL,
   PRIMARY KEY(idFolha_Pag),
   foreign key(idFuncionario) references Funcionario(idFuncionario)
 );

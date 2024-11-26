@@ -35,7 +35,7 @@ namespace restauranteLibrary
             string op = Console.ReadLine();
             escolha(op);
 
-        }
+        } // Inserir o menu da folha de pagamento e a atualização  dentro do exibir, e deixar só o delete nesse menu
         public void escolha(string opcao)
         {
             string nomeFunc;
@@ -359,6 +359,8 @@ namespace restauranteLibrary
         public void folha_Pagamento()
         {
             fol.conexao = conexao;
+            fol.idFunc = this.IdFunc;
+            fol.menuFol();
         }
         public void carregarDadosDoBanco(string nome) 
         {
