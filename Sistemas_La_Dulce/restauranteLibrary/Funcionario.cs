@@ -45,7 +45,7 @@ namespace restauranteLibrary
                     Console.WriteLine("Qual funcionário você quer consultar? (digite o nome)");
                     nomeFunc = Console.ReadLine();
                     carregarDadosDoBanco(nomeFunc);
-                    exibir();
+                    exibir(nomeFunc);
                     menuFunc();
                     break;
                 case "2":
@@ -65,6 +65,7 @@ namespace restauranteLibrary
 
                 case "q":
                     Thread.Sleep(1000);
+                    Console.Clear() ;
                     break;
                 default:
                     Console.WriteLine("Opção inválida");
@@ -72,15 +73,41 @@ namespace restauranteLibrary
             }
         }
 
-        public void exibir()
+        public void exibir(string nome)
         {
+            bool alterar = false;
+            string escolha;
             Console.WriteLine("Id: {0}", this.IdFunc);
             Console.WriteLine("Nome: {0}",this.Nome);
             Console.WriteLine("Cargo: {0}",this.Cargo);
             Console.WriteLine("Tel_C: {0}",this.Tel_C);
             Console.WriteLine("Email: {0}",this.Email);
             Console.WriteLine("Data_de_Contratação: {0}",this.Data_de_Contratacao);
-            Console.WriteLine("\nAperte qualquer tecla para voltar");
+
+            Console.WriteLine("Deseja fazer alguma alteraçao ou consultar a folha de pagamento do funcionario?/n");
+            alterar = Console.ReadLine().Equals("s");
+            if (alterar)
+            {
+                Console.WriteLine("alterar - 1");
+                Console.WriteLine("consultar - 2");
+                escolha= Console.ReadLine();
+
+                switch (escolha)
+                {
+                    case "1":
+                        atualizar(nome);
+                        break;
+                    case "2":
+                        folha_Pagamento();
+                        break;
+
+                }
+
+            }else
+            { Console.WriteLine("\nAperte qualquer tecla para voltar"); }
+            
+
+
             Console.ReadKey();
         }
 
