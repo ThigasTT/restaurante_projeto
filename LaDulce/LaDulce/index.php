@@ -8,8 +8,13 @@
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'><link rel="stylesheet" href="style.css">
 <script src="https://unpkg.com/scrollreveal"></script>
 </head>
+
 <body>
+
 <style>
+
+
+
     body{
         background-image: url(restaurante-2560-x-1532-pqjzgouwuva4s618.jpg);
         background-attachment: fixed, scroll;
@@ -471,12 +476,18 @@ include_once "form_user.php";
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
 
-                            <div class="copyright">
+                <div class="copyright">
                      <footer id="copy">
+                        
                         &copy; CopyRight 2024 - Todos os Direitos Reservados<br>
                         Thiago Caetano, Gustavo Muniz, Jeferson Brandão, Rhaul Araujo
-                     </footer>
+                        
+                     </footer><br>
+                     
+                     <h3>Entre Em Contato Conosco</h3>
+
                 </div>
+
 
 </body>
 </html>
