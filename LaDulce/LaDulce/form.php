@@ -3,6 +3,7 @@ if(isset($_POST['txt_nome'],$_POST['txt_email'],$_POST['dt_data'],$_POST['txt_en
     $name=$_POST['txt_nome'];
     $email=$_POST['txt_email'];
     $date=$_POST['dt_data'];
+    $time=$_POST['time_hórario'];
     $end=$_POST['txt_end'];
     $mensa=$_POST['mensagem'];
     include_once "conexao.php";
@@ -10,8 +11,9 @@ if(isset($_POST['txt_nome'],$_POST['txt_email'],$_POST['dt_data'],$_POST['txt_en
     $stmt->bindParam(1,$name);
     $stmt->bindParam(2,$email);
     $stmt->bindParam(3,$date);
-    $stmt->bindParam(4,$end);
-    $stmt->bindParam(5,$mensa);
+    $stmt->bindParam(4,$time);
+    $stmt->bindParam(5,$end);
+    $stmt->bindParam(6,$mensa);
     
     if($stmt->execute()) {
         echo "Reserva feita com sucesso!";

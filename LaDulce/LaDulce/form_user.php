@@ -18,6 +18,7 @@ include_once "header.php";
     <label class="header-p">Nome:</label><input type="text" name="txt_nome" placeholder="Digite Seu Nome" required maxlength="100"><br>
     <label class="header-p">Email:</label><input type="email" name="txt_email" placeholder="Digite Seu Email" required maxlength="100"><br>
     <label class="header-p">Data De Reserva:</label><input type="date" name="dt_data" required><br>
+    <label class="header-p">Hórario:</label><input type="time" name="time_hórario" required><br>
     <label class="header-p">N° De Pessoas:</label><input type="text" name="txt_end" placeholder="Numero de Pessoas" required maxlength="100"><br>
     <textarea placeholder="Digite sua mensagem aqui"  name="mensagem"></textarea><br><input style="color:black; background-color:  #ffc267;"  class="header-p" type="submit" value="Cadastrar" required>
 </form>
