@@ -385,7 +385,7 @@ namespace restauranteLibrary
         }
         public void folha_Pagamento()
         {
-            fol.conexao = conexao;
+            fol.conexao = this.conexao;
             fol.idFunc = this.IdFunc;
             fol.menuFol();
         }

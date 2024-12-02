@@ -23,7 +23,7 @@ namespace restauranteLibrary
         public string conexao;
         public Folha_pag(string conexao)
         {
-            this.conexao = conexao;
+            this.conexao = "0;" ;
         }
 
         public void menuFol()
@@ -158,6 +158,8 @@ namespace restauranteLibrary
                     Console.WriteLine("Digite o numero de faltas");
                     this.Faltas = int.Parse(Console.ReadLine());
 
+                    calculoDescontos();
+
                     using (MySqlConnection connection = new MySqlConnection(conexao))
                     {
                         try
@@ -194,7 +196,7 @@ namespace restauranteLibrary
                 case "3":
                     Console.WriteLine("Digite as horas de atrasos (em minutos)");
                     this.Atrasos = double.Parse(Console.ReadLine());
-
+                    calculoDescontos();
                     using (MySqlConnection connection = new MySqlConnection(conexao))
                     {
                         try
@@ -232,7 +234,9 @@ namespace restauranteLibrary
                 case "4":
                     Console.WriteLine("Digite quantas horas extras o empregado fez (em minutos)");
                     this.Hora_Extra = double.Parse(Console.ReadLine());
-
+                    Console.WriteLine("Digite a porcentagem de aumento de cada hora extra (não precisa do simbolo)");
+                    double aumento = double.Parse(Console.ReadLine());
+                    calculoHE(aumento);
                     using (MySqlConnection connection = new MySqlConnection(conexao))
                     {
                         try
@@ -358,10 +362,11 @@ namespace restauranteLibrary
             this.Salario_final = Salario_base - (sal_dia*this.Faltas + sal_dia * Atrasos);
         }
 
-        public void calculoHE()
+        public void calculoHE(double aumento)
         { 
-            double he = 
-            this.Salario_final = this.Salario_final;
+            double sal_hora = this.Salario_base / this.Jornada_Mes;
+            double he = sal_hora+(aumento/100)*sal_hora;
+            this.Salario_final = this.Salario_final + he;
         }
 
     }

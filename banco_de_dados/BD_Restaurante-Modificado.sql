@@ -144,8 +144,7 @@ CREATE TABLE Financeiro (
     REFERENCES Estabelecimento(idEstabelecimento)
 );
 
-
-insert into `restaurante`.`financeiro`(`idFinanceiro`,`Estabelecimento_idEstabelecimento`) values(1,1);
+insert into `restaurante`.`financeiro`(`idFinanceiro`,`Estabelecimento_idEstabelecimento`,`Capital_Social`) values(1,1,15.000);
 
 CREATE TABLE Folha_Pag (
   idFolha_Pag INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
