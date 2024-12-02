@@ -20,7 +20,8 @@ namespace restauranteLibrary
         public Folha_pag fol;
         public Funcionario(string conexao)
         {
-            this.conexao = conexao; 
+            this.conexao = conexao;
+             this.fol = new Folha_pag(conexao);
         }
         public void menuFunc()
         {
@@ -385,7 +386,8 @@ namespace restauranteLibrary
         }
         public void folha_Pagamento()
         {
-            fol.conexao = this.conexao;
+            //fol.conexao = this.conexao;
+            fol.CarregarDadosDoBanco(this.IdFunc);
             fol.idFunc = this.IdFunc;
             fol.menuFol();
         }
