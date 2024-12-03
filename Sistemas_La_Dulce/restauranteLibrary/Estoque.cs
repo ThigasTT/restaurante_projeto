@@ -49,9 +49,9 @@ namespace restauranteLibrary
             Console.WriteLine("Estoque\n\n");
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("Listar produtos - 1");
-            Console.WriteLine("Consultar estoque-2");
-            Console.WriteLine("Relatar entrada-3");
-            Console.WriteLine("Relatar saída-4");
+           // Console.WriteLine("Consultar estoque-2");
+            Console.WriteLine("Relatar entrada-2");
+            Console.WriteLine("Relatar saída-3");
             Console.WriteLine("Sair-q");
             op = Console.ReadLine();
             execução(op);
@@ -66,16 +66,16 @@ namespace restauranteLibrary
                     case "1":
                     listaProd();
                         break;
-                    case "2":
+                    /*case "2":
                         exibir();
                         Console.ReadKey();
                         menuestoque(id);
-                        break;
-                    case "3":
+                        break;*/
+                    case "2":
                         Console.WriteLine("Digite a quantidade de itens que entraram e em seguida o custo unitário\n");
                         atSaldo(int.Parse(Console.ReadLine()), double.Parse(Console.ReadLine()));
                         break;
-                    case "4":
+                    case "3":
                         Console.WriteLine("Digite a quantidade de itens que sairão\n");
                         redSaldo(int.Parse(Console.ReadLine()));
                         break;
@@ -83,8 +83,9 @@ namespace restauranteLibrary
                     case "q":
                     Thread.Sleep(1000); 
                     break;
-                  
-
+                default:
+                    Console.WriteLine("Opcao invalida");
+                    break;
                 }
             }
        
@@ -268,10 +269,10 @@ namespace restauranteLibrary
                 {
                     Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
                 }
-            Console.WriteLine("Aperte qualquer tecla para ir ao menu");
-            Console.ReadKey();
-            Console.WriteLine("\n\nQual o id do produto?");
+            Thread.Sleep(1000);
+            Console.WriteLine("\n\nQual o id do produto que vai ser atualizado?");
             int id = int.Parse(Console.ReadLine());
+            Console.Clear();
             menuestoque(id);
 
 

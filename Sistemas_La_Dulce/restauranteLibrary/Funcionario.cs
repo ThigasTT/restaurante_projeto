@@ -33,7 +33,7 @@ namespace restauranteLibrary
             Console.WriteLine("Cadastrar Funcionário - 2");
             Console.WriteLine("Atualizar dados do funcionario - 3");
             Console.WriteLine("Deletar um funcionário - 4");
-            Console.WriteLine("Consultar a folha de pagamento - 5");
+            //Console.WriteLine("Consultar a folha de pagamento - 5");
             Console.WriteLine("Sair - q");
             string op = Console.ReadLine();
             escolha(op);
@@ -64,8 +64,14 @@ namespace restauranteLibrary
                     nomeFunc = Console.ReadLine();
                     deletarFunc(nomeFunc);
                     break;
-                case "5":
-
+                /*case "5":
+                    Console.WriteLine("Qual funcionário você quer consultar a folha de pagamento? (digite o nome)");
+                    nomeFunc = Console.ReadLine();
+                    carregarDadosDoBanco(nomeFunc);
+                    Console.WriteLine("Digite a data referente a folha de pagamento");
+                    string data = Console.ReadLine();
+                    folha_Pagamento(data);
+                    break;*/
                 case "q":
                     Thread.Sleep(1000);
                     Console.Clear() ;
@@ -390,8 +396,9 @@ namespace restauranteLibrary
         public void folha_Pagamento(string data_folha)
         {
             //fol.conexao = this.conexao;
-            fol.CarregarDadosDoBanco(this.IdFunc, data_folha);
+
             fol.idFunc = this.IdFunc;
+            fol.CarregarDadosDoBanco(this.IdFunc);
             fol.menuFol();
         }
         public void carregarDadosDoBanco(string nome) 

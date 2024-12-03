@@ -32,10 +32,10 @@ namespace restauranteLibrary
             string op;
            
             Console.WriteLine("Folha de pagamento do funcionario");
-          //  Console.WriteLine("\nSe for a primeira vez, crie nova folha de pagamento para o funcionario\n");
-            Console.WriteLine("Consultar a folha de pagamento - 1");
-            Console.WriteLine("criar nova folha de pagamento - 2");
-            Console.WriteLine("Atualizar folha de pagamento - 3");
+            Console.WriteLine("\nListar todos os holerites -1");
+            Console.WriteLine("Consultar a folha de pagamento - 2");
+            Console.WriteLine("criar nova folha de pagamento - 3");
+            Console.WriteLine("Atualizar folha de pagamento - 4");
             Console.WriteLine("Sair - q");
 
             op = Console.ReadLine();
@@ -47,13 +47,16 @@ namespace restauranteLibrary
             switch (opcao)
             {
                 case "1":
-                    exibir();
+                    ListarFol();
                     break;
                 case "2":
+                    exibir();
+                    break;
+                case "3":
                     criaFolha();
                     break;
 
-                case "3":
+                case "4":
                     atFolha();
                     break;
                 case "q":
@@ -78,6 +81,8 @@ namespace restauranteLibrary
             Console.WriteLine("Data da folha de pagamento: {0}\n",this.Data_folha);
             Console.WriteLine("Aperte qualquer tecla para sair");
             Console.ReadKey();
+            Console.Clear();
+            menuFol();
         }
         public void criaFolha()
         {
@@ -379,7 +384,7 @@ namespace restauranteLibrary
 
             }
         }
-        public void CarregarDadosDoBanco(int idFunc, string data_fol)
+        public void CarregarDadosDoBanco(int idFunc)
         {
 
             using (MySqlConnection connection = new MySqlConnection(conexao))
@@ -389,10 +394,10 @@ namespace restauranteLibrary
                     connection.Open();
 
 
-                    string query = "SELECT * FROM Folha_Pag WHERE idFuncionario = @idFunc and Data_folha = @dataFol";
+                    string query = "SELECT * FROM Folha_Pag WHERE idFuncionario = @idFunc";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     cmd.Parameters.AddWithValue("@idFunc", this.idFunc);
-                    cmd.Parameters.AddWithValue("@dataFol", data_fol);
+                    //cmd.Parameters.AddWithValue("@dataFol", data_fol);
                     /*  Console.WriteLine(id);
                       Console.ReadKey();*/
 
@@ -420,6 +425,41 @@ namespace restauranteLibrary
                 {
                     Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
                 }
+            }
+        }
+
+        public void ListarFol()
+        {
+            using (MySqlConnection connection = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM Folha_Pag where idFuncionario = @idFunc";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@idFunc", this.idFunc);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        Console.WriteLine("{0,-10} {1,-20} {2,-15} {3,-15} {4,-15} {5,-25}", "Id", "Id fol", "id func", "salario final", "Jornada mensal", "Data do holerite");
+                        Console.WriteLine(new string('-', 100));
+
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("{0,-10} {1,-20} {2,-15} {3,-15} {4,-15}|| {5,-25}",
+                                reader["idFolha_Pag"], reader["idFuncionario"], reader["Salario_final"], reader["Jornada_Mes"], reader["Data_folha"]);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                }
+                Console.WriteLine("Aperte qualquer tecla para ir ao menu");
+                Thread.Sleep(1000);
+                Console.WriteLine("Aperte qualquer tecla para voltar");
+                Console.ReadKey();
+                menuFol();
             }
         }
 
