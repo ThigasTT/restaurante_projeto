@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['txt_nome'],$_POST['txt_email'],$_POST['dt_data'],$_POST['txt_end'],$_POST['mensagem'])){
+if(isset($_POST['txt_nome'],$_POST['txt_email'],$_POST['dt_data'],$_POST['time_hórario'],$_POST['txt_end'],$_POST['mensagem'])){
     $name=$_POST['txt_nome'];
     $email=$_POST['txt_email'];
     $date=$_POST['dt_data'];
@@ -7,7 +7,7 @@ if(isset($_POST['txt_nome'],$_POST['txt_email'],$_POST['dt_data'],$_POST['txt_en
     $end=$_POST['txt_end'];
     $mensa=$_POST['mensagem'];
     include_once "conexao.php";
-    $stmt=$conn->prepare("insert into Pedido(Estabelecimento_idEstabelecimento,Nome_Cli,email,Data_reserva,N_Pessoas,Descrição_event)values(1,?,?,?,?,?)");
+    $stmt=$conn->prepare("insert into Pedido(Estabelecimento_idEstabelecimento,Nome_Cli,email,Data_reserva,Horario,N_Pessoas,Descrição_event)values(1,?,?,?,?,?,?)");
     $stmt->bindParam(1,$name);
     $stmt->bindParam(2,$email);
     $stmt->bindParam(3,$date);

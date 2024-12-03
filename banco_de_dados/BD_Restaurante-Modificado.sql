@@ -27,6 +27,7 @@ CREATE TABLE Pedido (
   email varchar(80) ,
   Telefone_cli VARCHAR(45) ,
   Data_reserva DATE ,
+  Horario TIME ,
   N_Pessoas INT ,
   Tipo_reserv VARCHAR(45) ,
   Descrição_Event VARCHAR(45) ,
