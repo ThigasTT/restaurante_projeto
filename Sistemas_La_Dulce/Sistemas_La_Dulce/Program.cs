@@ -74,7 +74,7 @@ namespace Sistemas_La_Dulce
                         break;
                     case "q":
                         rodando = false;
-                        Console.WriteLine("Encerrando");
+                        Console.WriteLine("Encerrando ...");
                         Thread.Sleep(500);
                         break;
                 }

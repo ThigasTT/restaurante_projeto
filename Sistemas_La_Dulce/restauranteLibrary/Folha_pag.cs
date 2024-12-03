@@ -18,6 +18,7 @@ namespace restauranteLibrary
         public int Faltas { get; set; }
         public double Atrasos { get; set; }
         public double Hora_Extra { get; set; }
+        public double aumentoHE { get; set; }//porcentagem de aumento da he
         public int Jornada_Mes { get; set; }
         public string Data_folha { get; set; }//mês e ano xx/yyyy
         public string conexao;
@@ -69,10 +70,10 @@ namespace restauranteLibrary
         {
             Console.WriteLine("idFolha: {0}", this.idFolha);
             Console.WriteLine("idFunc: {0}",this.idFunc);
-            Console.WriteLine("Salario base: {0}",this.Salario_base);
-            Console.WriteLine("Salario final: {0}",this.Salario_final);
-            Console.WriteLine("Atrasos: {0} horas",this.Atrasos);
-            Console.WriteLine("Horas extras: {0} horas",this.Hora_Extra);
+            Console.WriteLine("Salario base: {0:f2}",this.Salario_base);
+            Console.WriteLine("Salario final: {0:f2}",this.Salario_final);
+            Console.WriteLine("Atrasos: {0:2f} horas",this.Atrasos);
+            Console.WriteLine("Horas extras: {0:2f} horas",this.Hora_Extra);
             Console.WriteLine("Data da folha de pagamento: {0}\n",this.Data_folha);
             Console.WriteLine("Aperte qualquer tecla para sair");
             Console.ReadKey();
@@ -88,13 +89,14 @@ namespace restauranteLibrary
             Console.WriteLine("Digite quantas horas extras o empregado fez");
             this.Hora_Extra = double.Parse(Console.ReadLine());
             Console.WriteLine("Digite a porcentagem de aumento (sem o simbolo de porcentagem");
-            int aumento = int.Parse(Console.ReadLine());
+             this.aumentoHE = int.Parse(Console.ReadLine());
             Console.WriteLine("Digite a jornada mensal do funcionario");
             this.Jornada_Mes = int.Parse(Console.ReadLine());
             Console.WriteLine("Digite o mês e o ano referente à essa folha ex: mm/aaaa");
             this.Data_folha = Console.ReadLine();
-            calculoDescontos();
-            calculoHE(aumento);
+            /*calculoDescontos();
+            calculoHE(aumento);*/
+            calculoDesAndAum(this.aumentoHE);
 
 
             using (MySqlConnection connection = new MySqlConnection(conexao))
@@ -104,7 +106,7 @@ namespace restauranteLibrary
                     connection.Open();
 
 
-                    string query = "INSERT INTO Folha_Pag (`idFuncionario`,`idEstabelecimento`, `Salario_base`,`Salario_final`,`Faltas`,`Atrasos`,`Hora_Extra`,`Jornada_Mes`) VALUES (@idFunc,1,@Sal_base,@Sal_final,@Faltas,@Atrasos,@HE,@Jornada_Mes);";
+                    string query = "INSERT INTO Folha_Pag (`idFuncionario`,`idEstabelecimento`, `Salario_base`,`Salario_final`,`Faltas`,`Atrasos`,`Hora_Extra`,`Jornada_Mes`,`Data_folha`) VALUES (@idFunc,1,@Sal_base,@Sal_final,@Faltas,@Atrasos,@HE,@Jornada_Mes,@data_fol);";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     cmd.Parameters.AddWithValue("@idFunc", this.idFunc);
                     cmd.Parameters.AddWithValue("@Sal_base", this.Salario_base);
@@ -113,6 +115,8 @@ namespace restauranteLibrary
                     cmd.Parameters.AddWithValue("@Atrasos", this.Atrasos);
                     cmd.Parameters.AddWithValue("@HE", this.Hora_Extra);
                     cmd.Parameters.AddWithValue("@Jornada_Mes", this.Jornada_Mes);
+                    cmd.Parameters.AddWithValue("@data_fol", this.Data_folha);
+
 
 
                     int linhasAfetadas = cmd.ExecuteNonQuery();
@@ -164,6 +168,9 @@ namespace restauranteLibrary
                     this.Atrasos = double.Parse(Console.ReadLine());
                     Console.WriteLine("Digite quantas horas extras o empregado fez");
                     this.Hora_Extra = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite a porcentagem de aumento da hora extra (sem o simbolo)");
+                    this.aumentoHE = double.Parse(Console.ReadLine());
+                    calculoDesAndAum(this.aumentoHE);
 
                     using (MySqlConnection connection = new MySqlConnection(conexao))
                     {
@@ -207,8 +214,8 @@ namespace restauranteLibrary
                 case "2":
                     Console.WriteLine("Digite o numero de faltas");
                     this.Faltas = int.Parse(Console.ReadLine());
-
-                    calculoDescontos();
+                   // calculoDescontos();
+                    calculoDesAndAum(this.aumentoHE);
 
                     using (MySqlConnection connection = new MySqlConnection(conexao))
                     {
@@ -247,7 +254,7 @@ namespace restauranteLibrary
                 case "3":
                     Console.WriteLine("Digite as horas de atrasos");
                     this.Atrasos = double.Parse(Console.ReadLine());
-                    calculoDescontos();
+                    //calculoDescontos();
                     using (MySqlConnection connection = new MySqlConnection(conexao))
                     {
                         try
@@ -286,8 +293,9 @@ namespace restauranteLibrary
                     Console.WriteLine("Digite quantas horas extras o empregado fez (em minutos)");
                     this.Hora_Extra = double.Parse(Console.ReadLine());
                     Console.WriteLine("Digite a porcentagem de aumento de cada hora extra (não precisa do simbolo)");
-                    double aumento = double.Parse(Console.ReadLine());
-                    calculoHE(aumento);
+                    this.aumentoHE = double.Parse(Console.ReadLine());
+                    //calculoHE(this.aumentoHE);
+                    calculoDesAndAum(this.aumentoHE);
                     using (MySqlConnection connection = new MySqlConnection(conexao))
                     {
                         try
@@ -370,7 +378,7 @@ namespace restauranteLibrary
 
             }
         }
-        public void CarregarDadosDoBanco(int idFunc)
+        public void CarregarDadosDoBanco(int idFunc, string data_fol)
         {
 
             using (MySqlConnection connection = new MySqlConnection(conexao))
@@ -380,9 +388,10 @@ namespace restauranteLibrary
                     connection.Open();
 
 
-                    string query = "SELECT * FROM Folha_Pag WHERE idFuncionario = @idFunc";
+                    string query = "SELECT * FROM Folha_Pag WHERE idFuncionario = @idFunc and Data_folha = @dataFol";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     cmd.Parameters.AddWithValue("@idFunc", this.idFunc);
+                    cmd.Parameters.AddWithValue("@dataFol", data_fol);
                     /*  Console.WriteLine(id);
                       Console.ReadKey();*/
 
@@ -417,8 +426,9 @@ namespace restauranteLibrary
 
         public void calculoDescontos() //considerando que um mês tem 30 dias
         {
-            double saL_hora = this.Salario_base/this.Jornada_Mes;
+            double sal_hora = this.Salario_base/this.Jornada_Mes;
             double sal_dia = this.Salario_base/30;
+          
             this.Salario_final = Salario_base - (sal_dia*this.Faltas + sal_dia * Atrasos);
         }
 
@@ -427,6 +437,16 @@ namespace restauranteLibrary
             double sal_hora = this.Salario_base / this.Jornada_Mes;
             double he = sal_hora + sal_hora*(aumento/100);
             this.Salario_final = this.Salario_final + this.Hora_Extra*he;
+        }
+
+        public void calculoDesAndAum(double aumento)
+        {
+            double sal_hora = this.Salario_base / this.Jornada_Mes;
+            double sal_dia = this.Salario_base / 30;
+            double total_desc = this.Faltas * sal_dia + this.Atrasos * sal_hora;
+            double he = sal_hora + sal_hora * (aumento / 100);
+            double total_aum = he * this.Hora_Extra;
+            this.Salario_final = this.Salario_base + total_aum - total_desc;
         }
 
     }

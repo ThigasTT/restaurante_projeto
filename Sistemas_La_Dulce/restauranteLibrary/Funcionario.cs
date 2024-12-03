@@ -25,6 +25,8 @@ namespace restauranteLibrary
         }
         public void menuFunc()
         {
+            listarFunc();
+            Console.ReadKey();
             Console.Clear();
             Console.WriteLine("Recursos Humanos \n");
             Console.WriteLine("Consultar dados de um funcionario - 1");
@@ -99,7 +101,9 @@ namespace restauranteLibrary
                         atualizar(nome);
                         break;
                     case "2":
-                        folha_Pagamento();
+                        Console.WriteLine("Digite a data referente a folha de pagamento");
+                        string data = Console.ReadLine();
+                        folha_Pagamento(data);
                         break;
 
                 }
@@ -384,10 +388,10 @@ namespace restauranteLibrary
                 }
             }
         }
-        public void folha_Pagamento()
+        public void folha_Pagamento(string data_folha)
         {
             //fol.conexao = this.conexao;
-            fol.CarregarDadosDoBanco(this.IdFunc);
+            fol.CarregarDadosDoBanco(this.IdFunc, data_folha);
             fol.idFunc = this.IdFunc;
             fol.menuFol();
         }
@@ -420,6 +424,104 @@ namespace restauranteLibrary
                         else
                         {
                             Console.WriteLine("Funcionario não encontrado.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                }
+            }
+        }
+        public void carregarDadosDoBanco(int id)
+        {
+            using (MySqlConnection connection = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    connection.Open();
+
+
+                    string query = "SELECT idFuncionario, Nome, Cargo, Tel_C, Email, Data_de_Contratacao FROM Funcionario WHERE idFunc = @idFunc";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@idFunc", this.IdFunc);
+                    /*  Console.WriteLine(id);
+                      Console.ReadKey();*/
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            this.IdFunc = Convert.ToInt32(reader["idFuncionario"]);
+                            this.Nome = reader["Nome"].ToString();
+                            this.Cargo = reader["Cargo"].ToString();
+                            this.Tel_C = reader["Tel_C"].ToString();
+                            this.Email = reader["Email"].ToString();
+                            this.Data_de_Contratacao = reader["Data_de_Contratacao"].ToString();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Funcionario não encontrado.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                }
+            }
+        }
+
+        /* public void listarFunc()
+         {
+             using (MySqlConnection connection = new MySqlConnection(conexao))
+             {
+                 try
+                 {
+                     connection.Open();
+                     string query = "SELECT idFuncionario, Nome, Cargo, Tel_C, Email, Data_de_Contratacao FROM Funcionario";
+                     MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                     using (MySqlDataReader reader = cmd.ExecuteReader())
+                     {
+                         while (reader.Read())
+                         {
+                             Console.WriteLine("Id: {0}", reader["idFuncionario"]);
+                             Console.WriteLine("Nome: {0}", reader["Nome"]);
+                             Console.WriteLine("Cargo: {0}", reader["Cargo"]);
+                             Console.WriteLine("Tel_C: {0}", reader["Tel_C"]);
+                             Console.WriteLine("Email: {0}", reader["Email"]);
+                             Console.WriteLine("Data de Contratação: {0}", reader["Data_de_Contratacao"]);
+                             Console.WriteLine("-----------------------");
+                             Thread.Sleep(500);
+                         }
+                     }
+                 }
+                 catch (Exception ex)
+                 {
+                     Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                 }
+             }
+         }*/
+        public void listarFunc()
+        {
+            using (MySqlConnection connection = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT idFuncionario, Nome, Cargo, Tel_C, Email, Data_de_Contratacao FROM Funcionario";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        Console.WriteLine("{0,-10} {1,-20} {2,-15} {3,-15} {4,-25} {5,-15}", "Id", "Nome", "Cargo", "Tel_C", "Email", "Data de Contratação");
+                        Console.WriteLine(new string('-', 100));
+
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("{0,-10} {1,-20} {2,-15} {3,-15} {4,-25} {5,-15}",
+                                reader["idFuncionario"], reader["Nome"], reader["Cargo"], reader["Tel_C"], reader["Email"], reader["Data_de_Contratacao"]);
                         }
                     }
                 }

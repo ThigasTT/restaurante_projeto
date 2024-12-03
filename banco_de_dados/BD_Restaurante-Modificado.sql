@@ -156,6 +156,7 @@ CREATE TABLE Folha_Pag (
   Atrasos DECIMAL NOT NULL,
   Hora_Extra DECIMAL NOT NULL,
   Jornada_Mes INT NOT NULL,
+  Data_folha varchar(45) not null,
   PRIMARY KEY(idFolha_Pag),
   foreign key(idFuncionario) references Funcionario(idFuncionario)
 );
