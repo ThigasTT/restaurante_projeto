@@ -55,10 +55,9 @@ namespace Sistemas_La_Dulce
                 switch (m.painel())
                 {
                     case "1":
-                        Console.WriteLine("Qual o id do produto?");
-                        int id = int.Parse(Console.ReadLine());
+                        
                         Console.Clear();
-                        e.menuestoque(id);
+                        e.listaProd();
                         break;
                     case "2":
                         Console.Clear();

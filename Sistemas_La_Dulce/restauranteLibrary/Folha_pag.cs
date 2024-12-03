@@ -72,8 +72,9 @@ namespace restauranteLibrary
             Console.WriteLine("idFunc: {0}",this.idFunc);
             Console.WriteLine("Salario base: {0:f2}",this.Salario_base);
             Console.WriteLine("Salario final: {0:f2}",this.Salario_final);
-            Console.WriteLine("Atrasos: {0:2f} horas",this.Atrasos);
-            Console.WriteLine("Horas extras: {0:2f} horas",this.Hora_Extra);
+            Console.WriteLine("Faltas: {0}", this.Faltas);
+            Console.WriteLine("Atrasos: {0:f2} horas",this.Atrasos);
+            Console.WriteLine("Horas extras: {0:f2} horas",this.Hora_Extra);
             Console.WriteLine("Data da folha de pagamento: {0}\n",this.Data_folha);
             Console.WriteLine("Aperte qualquer tecla para sair");
             Console.ReadKey();

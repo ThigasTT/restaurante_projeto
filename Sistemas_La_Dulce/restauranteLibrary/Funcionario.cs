@@ -126,7 +126,7 @@ namespace restauranteLibrary
             this.Tel_C= Console.ReadLine();
             Console.WriteLine("Qual o email do funcionario?");
             this.Email= Console.ReadLine();
-            Console.WriteLine("Qualfoi a data de contratação do funcionario?");
+            Console.WriteLine("Qual foi a data de contratação do funcionario?");
             this.Data_de_Contratacao = Console.ReadLine();
 
             using (MySqlConnection connection = new MySqlConnection(conexao))
@@ -173,7 +173,6 @@ namespace restauranteLibrary
             Console.WriteLine("Cargo - 2");
             Console.WriteLine("Tel_C - 3");
             Console.WriteLine("Email - 4");
-            Console.WriteLine("");
 
             string op = Console.ReadLine();
             switch (op)
@@ -515,12 +514,12 @@ namespace restauranteLibrary
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        Console.WriteLine("{0,-10} {1,-20} {2,-15} {3,-15} {4,-25} {5,-15}", "Id", "Nome", "Cargo", "Tel_C", "Email", "Data de Contratação");
+                        Console.WriteLine("{0,-10} {1,-20} {2,-15} {3,-15} {4,-15} {5,-25}", "Id", "Nome", "Cargo", "Tel_C", "Email", "Data de Contratação");
                         Console.WriteLine(new string('-', 100));
 
                         while (reader.Read())
                         {
-                            Console.WriteLine("{0,-10} {1,-20} {2,-15} {3,-15} {4,-25} {5,-15}",
+                            Console.WriteLine("{0,-10}|| {1,-20}|| {2,-15}|| {3,-15}|| {4,-15}|| {5,-25}",
                                 reader["idFuncionario"], reader["Nome"], reader["Cargo"], reader["Tel_C"], reader["Email"], reader["Data_de_Contratacao"]);
                         }
                     }
@@ -529,6 +528,7 @@ namespace restauranteLibrary
                 {
                     Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
                 }
+                Console.WriteLine("Aperte qualquer tecla para ir ao menu");
             }
         }
     }

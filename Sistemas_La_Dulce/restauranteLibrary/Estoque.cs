@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
@@ -40,16 +41,17 @@ namespace restauranteLibrary
 
         public void menuestoque(int id)
         {
-            
-           // Console.WriteLine("Qual o id do produto?");
+
             this.id = id;
+           
             CarregarDadosDoBanco(this.id);
             string op;
             Console.WriteLine("Estoque\n\n");
             Console.WriteLine("O que deseja fazer?");
-            Console.WriteLine("Consultar estoque-1");
-            Console.WriteLine("Relatar entrada-2");
-            Console.WriteLine("Relatar saída-3");
+            Console.WriteLine("Listar produtos - 1");
+            Console.WriteLine("Consultar estoque-2");
+            Console.WriteLine("Relatar entrada-3");
+            Console.WriteLine("Relatar saída-4");
             Console.WriteLine("Sair-q");
             op = Console.ReadLine();
             execução(op);
@@ -60,25 +62,24 @@ namespace restauranteLibrary
             public void execução(string opção)
             {
                 switch (opção)
-                {
+                { 
                     case "1":
+                    listaProd();
+                        break;
+                    case "2":
                         exibir();
                         Console.ReadKey();
                         menuestoque(id);
                         break;
-                    case "2":
+                    case "3":
                         Console.WriteLine("Digite a quantidade de itens que entraram e em seguida o custo unitário\n");
                         atSaldo(int.Parse(Console.ReadLine()), double.Parse(Console.ReadLine()));
                         break;
-                    case "3":
+                    case "4":
                         Console.WriteLine("Digite a quantidade de itens que sairão\n");
                         redSaldo(int.Parse(Console.ReadLine()));
                         break;
-                    /*case "4":
-                    Console.WriteLine("Qual o nome do produto?");
-                    string nome = Console.ReadLine();
-                    Estoque e = new Estoque(nome);
-                    break;*/
+                   
                     case "q":
                     Thread.Sleep(1000); 
                     break;
@@ -219,6 +220,64 @@ namespace restauranteLibrary
         }
     }
 
+        public void listaProd()
+        {
+            using (MySqlConnection connection = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT idProdutos, Nome_P,Quantidade,Custo,Saldo FROM Produtos";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        Console.WriteLine("{0,-10} {1,-15} {2,-20} {3,-25} {4,-15}", "Id", "Nome", "Quantidade", "Custo", "Saldo do estoque");
+                        Console.WriteLine(new string('-', 100));
+
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("{0,-10} {1,-20} {2,-25} {3,-25} {4,-25}",
+                                reader["idProdutos"], reader["Nome_P"], reader["Quantidade"], reader["Custo"], reader["Saldo"]);
+                            Console.WriteLine(new string('-', 100));
+                        }
+                    }
+                }catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                }
+            }
+
+            using (MySqlConnection connection = new MySqlConnection(conexao))
+                try
+                {
+                    connection.Open();
+                    string query = "select sum(saldo) as total from Produtos";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("Total no estoque:{0,-10}", reader["total"]);
+                            Console.WriteLine(new string('-', 100));
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
+                }
+            Console.WriteLine("Aperte qualquer tecla para ir ao menu");
+            Console.ReadKey();
+            Console.WriteLine("\n\nQual o id do produto?");
+            int id = int.Parse(Console.ReadLine());
+            menuestoque(id);
+
+
+        }
+    }
+
         /* public void atQtdProd(int qtd)
          {
              this.Qtd_prod = this.Qtd_prod + qtd;
@@ -227,5 +286,4 @@ namespace restauranteLibrary
          {
              this.Pr_Unit = this.Saldo / this.Qtd_prod;
          }*/
-    }
 }
