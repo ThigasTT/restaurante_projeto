@@ -27,7 +27,6 @@ CREATE TABLE Pedido (
   email varchar(80) ,
   Telefone_cli VARCHAR(45) ,
   Data_reserva DATE ,
-  Horario TIME ,
   N_Pessoas INT ,
   Tipo_reserv VARCHAR(45) ,
   Descrição_Event VARCHAR(45) ,
@@ -78,7 +77,7 @@ INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES (
 INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('27', 'Gin Maça Verde', '49.90');
 INSERT INTO `restaurante`.`Produtos` (`idProdutos`, `Nome_P`, `Preço`) VALUES ('28', 'Maragarita', '42.90');
 
-
+select sum(saldo) as 'total do saldo' from Produtos;
 CREATE TABLE Funcionario (
   idFuncionario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   idEstabelecimento INTEGER ,
@@ -145,7 +144,7 @@ CREATE TABLE Financeiro (
     REFERENCES Estabelecimento(idEstabelecimento)
 );
 
-insert into `restaurante`.`financeiro`(`idFinanceiro`,`Estabelecimento_idEstabelecimento`,`Capital_Social`) values(1,1,15.000);
+insert into `restaurante`.`financeiro`(`idFinanceiro`,`Estabelecimento_idEstabelecimento`,`Capital_Social`,`Caixa`) values(1,1,15000,15000);
 
 CREATE TABLE Folha_Pag (
   idFolha_Pag INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
